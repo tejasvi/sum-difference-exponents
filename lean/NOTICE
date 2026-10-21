@@ -1,0 +1,15 @@
+This project contains a port of the Lean development
+
+    Logan J. Kleinwaks, "Improved sum-difference inequalities in abelian groups"
+    https://github.com/kleinwaks/sum-difference
+    commit 3664fd11b28ee7a4ac398e951156525bc05b08fa (2026-10-06, "Paper v1.1")
+
+distributed under the Apache License, Version 2.0 (copy: third_party/kleinwaks_sum_difference/LICENSE;
+the original CITATION.cff, lakefile and manifest are kept there unchanged; the original README is in that
+repository at the commit above).
+
+The files under SumDifference/ are that development, modified only to compile with Lean v4.35.0-rc3 and
+Mathlib c55e6e786f49 (the original targets Lean v4.28.0 and Mathlib 8f9d9cff). Every modified file carries a
+notice at its top listing the changes. The mathematics and the statements of the original are unchanged.
+
+The files under EntropyBounds/ are new and build on the ported library.

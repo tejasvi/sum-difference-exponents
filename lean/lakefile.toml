@@ -1,0 +1,29 @@
+name = "EntropyBounds"
+version = "0.1.0"
+keywords = ["math"]
+defaultTargets = ["SumDifference", "EntropyBounds"]
+
+[leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = false
+autoImplicit = false
+weak.linter.style.header = false
+
+# Lean proofs of entropy sum-difference bounds (GGSTW Problems 6.30(a), 6.44).
+# Toolchain leanprover/lean4:v4.35.0-rc3; Mathlib at tag v4.35.0-rc3 (commit c55e6e786f49, see lake-manifest.json).
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.35.0-rc3"
+
+# L. J. Kleinwaks, "Improved sum-difference inequalities in abelian groups",
+# github.com/kleinwaks/sum-difference at commit 3664fd11b28ee7a4ac398e951156525bc05b08fa (Apache-2.0),
+# ported to this toolchain; see NOTICE and third_party/kleinwaks_sum_difference/.
+[[lean_lib]]
+name = "SumDifference"
+globs = ["SumDifference.+"]
+
+# New results built on the ported library.
+[[lean_lib]]
+name = "EntropyBounds"
+globs = ["EntropyBounds.+"]
