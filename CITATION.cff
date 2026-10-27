@@ -8,8 +8,8 @@ authors:
 license:
   - Apache-2.0
   - CC-BY-4.0
-repository-code: "https://github.com/tejasvi/sum-difference-exponents-v2"
-doi: 10.5281/zenodo.23523393
+repository-code: "https://github.com/tejasvi/sum-difference-exponents"
+doi: 10.5281/zenodo.23687856
 preferred-citation:
   type: article
   title: "Certified upper bounds for two sum-difference exponents"
@@ -17,5 +17,5 @@ preferred-citation:
     - family-names: Tomar
       given-names: Tejasvi Singh
       orcid: "https://orcid.org/0000-0003-4668-3639"
-  doi: 10.5281/zenodo.23523392
+  doi: 10.5281/zenodo.23687855
   year: 2026

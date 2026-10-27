@@ -2,7 +2,7 @@
 
 Certificates, checkers and search programs for the paper
 *Certified upper bounds for two sum-difference exponents* by Tejasvi Singh Tomar
-(Zenodo, [doi:10.5281/zenodo.23523392](https://doi.org/10.5281/zenodo.23523392)).
+(Zenodo, [doi:10.5281/zenodo.23687855](https://doi.org/10.5281/zenodo.23687855)).
 
 ## Results
 
@@ -28,7 +28,7 @@ For finite subsets `A`, `B` of an abelian group and `G ⊆ A × B`, write `A +_G
    (proved in the paper), the sum-difference constant `C_3a` of Gyarmati, Hennecart and Ruzsa (Problem 6.44)
    satisfies `C_3a ≤ 26554427158/20486493787 < 1.29619190`.
 4. **Erdős problem #1097.** A set of `n` integers determines at most `n^1.8272963` distinct positive common
-   differences of three-term arithmetic progressions (remark after Theorem 1.2).
+   differences of three-term arithmetic progressions (Remark 1.5).
 
 ## Checking the certificates
 
@@ -128,8 +128,11 @@ These scripts need `python-flint`, `numpy` and `scipy`.
 ## Lean proofs
 
 `lean/` contains Lean 4 proofs, checked by the Lean kernel, of the following statements. All of them depend only on
-the axioms `propext`, `Classical.choice` and `Quot.sound`. The theorems do not mention the certificates, so the
-programs that translate the certificates into Lean need not be trusted.
+the axioms `propext`, `Classical.choice` and `Quot.sound`, as the `#print axioms` lines of `lean/Axioms.lean` show.
+The lines for the theorems of Theorem 1.2 were run on their own. The other lines, and every Lean file outside
+`lean/EntropyBounds/GlueZ/` except `Axioms.lean`, are unchanged since commit `b3786a3` of this repository, whose build
+checked them. The theorems do not
+mention the certificates, so the programs that translate the certificates into Lean need not be trusted.
 
 The Lean files in the namespace `EntropyBounds.Glue.Certs.CL3B6SC` (certificate `certs/c3b_torsionfree.json`, Theorem 1.1) prove
 
@@ -156,6 +159,13 @@ and (b) in every abelian group without 2-torsion), the versions for torsion-free
 statements over ℝ of the same names above. `Erdos1097.lean` proves `ap_differences_card_le`:
 a finite set `A` in such a group determines at most `#A ^ C` nonzero common differences of three-term arithmetic
 progressions, and `ap_differences_pos_card_le_int`: the same for positive differences and finite `A ⊆ ℤ`.
+
+The Lean files in the namespace `EntropyBounds.GlueZ.Certs.C3BALL` (certificate `certs/c3b_allgroups.json`, Theorem 1.2) translate this
+certificate for an arbitrary abelian group `G : Type`. The certificate does not divide, so the closures are computed
+over ℤ. They prove `entropy_ineq_general` and `entropy_max` in `G`, and the hand-written
+`lean/EntropyBounds/GlueZ/Thm12.lean` proves `thm12_entropy` and `thm12_set` in `G`: statements (a) and (b) of
+Theorem 1.1 with the numbers of Theorem 1.2, that is, Theorem 1.2, in every abelian group, and `lambda_sum`: the
+three numbers sum to 9213/5036 < 1.8294282.
 
 The Lean files in the namespace `EntropyBounds.TwoSet.Certs.R7A5` (certificate `certs/pair_exponent.json`, Theorem 1.3) prove
 
@@ -186,6 +196,8 @@ Files:
   `x − y` injective (`Shuffle.lean`).
 - `lean/EntropyBounds/GlueG/`: the same for coordinates in an abelian group without 2-torsion, with the theorems
   `bridge_*` back to ℝ (`BridgeCL3B6SC.lean`) and the corollary for Erdős problem #1097 (`Erdos1097.lean`).
+- `lean/EntropyBounds/GlueZ/`: the witness checks of GlueG with every multiplier 1, which need no hypothesis on doubling
+  (`Basic.lean`), and the two theorems for Theorem 1.2 (`Thm12.lean`).
 - `lean/EntropyBounds/Lemma/`: inequalities proved by copy steps, for arbitrary random variables.
 - `lean/EntropyBounds/Iid/`, `lean/EntropyBounds/TwoSet/Common.lean`, `lean/EntropyBounds/TwoSet/Mirror.lean`:
   lemmas about independent copies of Kleinwaks' coupling, one for each kind of row of the two-set certificate
@@ -195,18 +207,21 @@ Files:
   `K` and `c` fixed, from `|X − Y| ≤ |X + Y|^λ` for all finite `X, Y ⊆ ℤ` (`admissibleK_le_of_pair_ceiling`, no
   supremum involved), and the facts that make `thetaK` the supremum of a nonempty bounded set (`admissibleK_one`,
   `bddAbove_admissibleK`).
-- `lean/EntropyBounds/Glue/Certs/CL3B6SC/`, `lean/EntropyBounds/GlueG/Certs/CL3B6SC/` and
+- `lean/EntropyBounds/Glue/Certs/CL3B6SC/`, `lean/EntropyBounds/GlueG/Certs/CL3B6SC/`,
+  `lean/EntropyBounds/GlueZ/Certs/C3BALL/` and
   `lean/EntropyBounds/TwoSet/Certs/R7A5/`: the certificates translated into Lean by `lean/tools/export_glue.py` (with
-  `export_lemmas.py`, and `export_product.py` for `Product.lean`), `lean/tools/export_glue_g.py` and
-  `lean/tools/export_twoset_x.py`, which use other versions of the checkers as libraries (`lean/tools/ref/`:
-  `check630.py` 711d7e41 and `check3_8ab8e59a.py`). In `lean/`, the commands
+  `export_lemmas.py`, and `export_product.py` for `Product.lean`), `lean/tools/export_glue_g.py`,
+  `lean/tools/export_glue_z.py` and `lean/tools/export_twoset_x.py`, which use other versions of the checkers as
+  libraries (`lean/tools/ref/`: `check630.py` 711d7e41 and `check3_8ab8e59a.py`). In `lean/`, the commands
 
       python3 tools/export_glue.py ../certs/c3b_torsionfree.json CL3B6SC
       python3 tools/export_product.py CL3B6SC
       python3 tools/export_glue_g.py ../certs/c3b_torsionfree.json CL3B6SC
       python3 tools/export_twoset_x.py ../certs/pair_exponent.json R7A5
+      python3 tools/export_glue_z.py ../certs/c3b_allgroups.json C3BALL
 
-  regenerate these files byte for byte.
+  regenerate these files byte for byte. Move the four directories elsewhere first: `export_glue_z.py` refuses to write
+  into an existing directory.
 
 To build (the toolchain is installed by `elan` from `lean/lean-toolchain`):
 

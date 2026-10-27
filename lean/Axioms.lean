@@ -6,6 +6,7 @@ import EntropyBounds.Glue.Certs.CL3B6SC.General
 import EntropyBounds.Glue.Certs.CL3B6SC.Product
 import EntropyBounds.GlueG.BridgeCL3B6SC
 import EntropyBounds.GlueG.Erdos1097
+import EntropyBounds.GlueZ.Thm12
 #print axioms EntropyBounds.TwoSet.Certs.R7A5.pair_ceiling
 #print axioms EntropyBounds.TwoSet.Certs.R7A5.theta_le
 #print axioms EntropyBounds.TwoSet.Certs.R7A5.thetaK_le
@@ -52,3 +53,13 @@ import EntropyBounds.GlueG.Erdos1097
 #print axioms EntropyBounds.GlueG.Certs.CL3B6SC.ap_differences_pos_card_le_int
 #check @EntropyBounds.GlueG.Certs.CL3B6SC.ap_differences_card_le
 #check @EntropyBounds.GlueG.Certs.CL3B6SC.ap_differences_pos_card_le_int
+#print axioms EntropyBounds.GlueZ.Certs.C3BALL.thm12_entropy
+#print axioms EntropyBounds.GlueZ.Certs.C3BALL.thm12_set
+#print axioms EntropyBounds.GlueZ.Certs.C3BALL.lambda_sum
+#print axioms EntropyBounds.GlueZ.Certs.C3BALL.entropy_ineq_general
+#print axioms EntropyBounds.GlueZ.Certs.C3BALL.entropy_max
+#check @EntropyBounds.GlueZ.Certs.C3BALL.thm12_entropy
+#check @EntropyBounds.GlueZ.Certs.C3BALL.thm12_set
+#check @EntropyBounds.GlueZ.Certs.C3BALL.lambda_sum
+#check @EntropyBounds.GlueZ.Certs.C3BALL.entropy_ineq_general
+#check @EntropyBounds.GlueZ.Certs.C3BALL.entropy_max
