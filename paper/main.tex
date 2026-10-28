@@ -31,108 +31,36 @@
 \newcommand{\cl}{\operatorname{cl}}
 \newcommand{\KT}{\mathrm{KT}}
 \newcommand{\file}[1]{\texttt{#1}}
-% the column of the certificate of Remark 3.3 in Table 1 (absent when the remark has no certificate of its own)
-\newcommand{\csCol}[1]{\gdef\csColNext{}\csColNext}
-% Lean paragraph for the certificates of Section 3: #1 = which certificates, #2 = their modules
-\newcommand{\leanKakeyaParagraph}[2]{In the formalization of #1, the copy steps of Section~\ref{sec:config} are built with Kleinwaks' formal construction behind Lemma~\ref{lem:copy}, and the relations of each step, the identifications (EL) and rule (INJ) are proved for this construction.\ Each inequality that the certificate proves by Lemma~\ref{lem:copyineq} becomes a Lean theorem about arbitrary random variables, proved from its own copy steps and, where the certificate does so, from earlier such inequalities applied to joint variables.\ #2 the theorems in the first part of Table~\ref{tab:lean}. The proof of \texttt{entropy\_ineq\_general} formalizes part~\ref{red:ent} of Lemma~\ref{lem:reduction}, and \texttt{set\_ineq\_prod} is part~\ref{thm:3b:set} of Theorem~\ref{thm:3b} over~$\R$. A second translation of the same certificate places the coordinates of the configuration in an arbitrary abelian group $\GG$ without $2$-torsion. Its closures are computed over $\Z[1/2]$, so that rule~\ref{cl:div} is used only with powers of~$2$, for which it suffices that doubling is injective. These closures agree with the closures over~$\Q$. It proves parts~\ref{thm:3b:ent} and~\ref{thm:3b:set} of Theorem~\ref{thm:3b} for every such $\GG$ (the second part of Table~\ref{tab:lean}); in Lean, $\GG$ ranges over the types of the lowest universe.\ A hand-written file deduces the two theorems on arithmetic progressions in that part from \texttt{set\_ineq'} in $\GG$, by the argument of Remark~\ref{rem:erdos}.\ At $\GG=\R$ these theorems give those of the first part.}
 
 %% Values that change when a certificate is replaced.
 %% BEGIN MACROS (values computed from the certificates)
 \newcommand{\CbFormsUsed}{41}
-\newcommand{\CbFormsUnused}{2}
-\newcommand{\CbFrac}{\frac{4\,785\,864\,240\,814\,563\,464\,816\,432\,634\,036\,471\,899}{2\,619\,096\,017\,836\,492\,522\,862\,695\,316\,182\,077\,572}}
 \newcommand{\CbUp}{1.8272963}
-\newcommand{\CbShort}{1.827297}
+\newcommand{\CbFrac}{\frac{4\,785\,864\,240\,814\,563\,464\,816\,432\,634\,036\,471\,899}{2\,619\,096\,017\,836\,492\,522\,862\,695\,316\,182\,077\,572}}
 \newcommand{\CbLamXd}{\frac{925\,252\,334\,339\,885\,103\,560\,423\,126\,733\,856\,553}{1\,309\,548\,008\,918\,246\,261\,431\,347\,658\,091\,038\,786}}
 \newcommand{\CbLamYd}{\frac{424\,585\,766\,727\,935\,297\,449\,756\,583\,005\,066\,048}{654\,774\,004\,459\,123\,130\,715\,673\,829\,045\,519\,393}}
 \newcommand{\CbLamSd}{\frac{1\,237\,016\,505\,223\,052\,067\,896\,560\,048\,548\,494\,601}{2\,619\,096\,017\,836\,492\,522\,862\,695\,316\,182\,077\,572}}
-\newcommand{\CbRows}{293}
-\newcommand{\CbSub}{252}
-\newcommand{\CbMono}{3}
-\newcommand{\CbCI}{3}
-\newcommand{\CbLemmaRows}{35}
-\newcommand{\CbShannon}{255}
-\newcommand{\CbForms}{43}
-\newcommand{\CbMerges}{21}
-\newcommand{\CbLemmas}{72}
 \newcommand{\CbLemMatusMax}{62}
 \newcommand{\CbLemDFZ}{5, 7, 8, 33, 35, 56, 60, 77, 107, 109}
-\newcommand{\CbFile}{c3b\_torsionfree}
-\newcommand{\CbShaShort}{2f553651}
-\newcommand{\CbFlats}{331}
 \newcommand{\CbDomain}{groups without $2$-torsion}
 \newcommand{\CbDiv}{$c=2^k$}
-\newcommand{\CsFormsUsed}{39}
-\newcommand{\CsUp}{1.8279199}
-\newcommand{\CsCI}{3}
-\newcommand{\CsLemmaRows}{0}
-\newcommand{\CsShannon}{258}
-\newcommand{\CsForms}{43}
-\newcommand{\CsMerges}{21}
-\newcommand{\CsLemmas}{0}
-\newcommand{\CsFile}{c3b\_s30}
-\newcommand{\CsShaShort}{fe9c58ec}
-\newcommand{\CsFlats}{325}
-\newcommand{\CsDomain}{groups without $2$-torsion}
-\newcommand{\CsDiv}{$c=2^k$}
 \newcommand{\CgFormsUsed}{20}
 \newcommand{\CgSlash}{9\,213/5\,036}
 \newcommand{\CgUp}{1.8294282}
-\newcommand{\CgShort}{1.829429}
 \newcommand{\CgLamXd}{\frac{882}{1\,259}}
 \newcommand{\CgLamYd}{\frac{1\,609}{2\,518}}
 \newcommand{\CgLamSd}{\frac{2\,467}{5\,036}}
-\newcommand{\CgCI}{3}
-\newcommand{\CgShannon}{139}
-\newcommand{\CgForms}{21}
-\newcommand{\CgMerges}{21}
-\newcommand{\CgFile}{c3b\_allgroups}
-\newcommand{\CgShaShort}{a7d47d40}
-\newcommand{\CgFlats}{172}
-\newcommand{\CgDomain}{all abelian groups}
-\newcommand{\CgDiv}{no}
-\newcommand{\CrFormsUsed}{5}
 \newcommand{\CrSlash}{841/459}
 \newcommand{\CrUp}{1.8322441}
-\newcommand{\CrCI}{3}
-\newcommand{\CrShannon}{82}
-\newcommand{\CrForms}{5}
-\newcommand{\CrMerges}{16}
-\newcommand{\CrFile}{c3b\_short}
-\newcommand{\CrShaShort}{244f0ff7}
-\newcommand{\CrFlats}{103}
-\newcommand{\CrDomain}{all abelian groups}
-\newcommand{\CrDiv}{no}
 \newcommand{\LmLamFrac}{\frac{20\,486\,493\,787}{14\,418\,560\,416}}
 \newcommand{\LmLamUp}{1.42084184}
-\newcommand{\LmLamShort}{1.420842}
 \newcommand{\LmCaFrac}{\frac{26\,554\,427\,158}{20\,486\,493\,787}}
 \newcommand{\LmCaUp}{1.29619190}
-\newcommand{\LmCaShort}{1.296192}
-\newcommand{\LmMerge}{1637}
-\newcommand{\LmCI}{7}
-\newcommand{\LmDpair}{1}
 \newcommand{\LmBsum}{2}
-\newcommand{\LmIdent}{12}
-\newcommand{\LmConcx}{72}
-\newcommand{\LmConcy}{66}
-\newcommand{\LmLink}{19}
-\newcommand{\LmPmerge}{505}
-\newcommand{\LmXshare}{190}
-\newcommand{\LmShannon}{2564}
-\newcommand{\LmMon}{3}
-\newcommand{\LmGrid}{160}
-\newcommand{\LmConfig}{4918}
 \newcommand{\LmDepth}{12}
 \newcommand{\LmWvars}{w,v,u}
 \newcommand{\LmWintro}{let $w$, $v$, $u$ be random variables of type $(1,0)$, that is, with law $\mu$}
 \newcommand{\LmWadd}{three further variables with the law of $X_1$}
-\newcommand{\LmForms}{117}
-\newcommand{\LmWForms}{95}
-\newcommand{\LmFile}{pair\_exponent}
-\newcommand{\LmShaShort}{772f2c70}
-\newcommand{\LmFlatsA}{2700}
-\newcommand{\LmFlatsB}{3048}
 \newcommand{\LmDispA}{8\,959\,609\,957\,200\,L\le 13\,623\,518\,368\,355\,S\\
 +115\,396\,751\,750\,h(0,1)+500\,183\,187\,638\,h(0,3)\\
 +248\,591\,603\,812\,h(0,4)+900\,281\,603\,795\,h(1,2)\\
@@ -150,36 +78,9 @@
 \newcommand{\LmHcount}{12}
 \newcommand{\LmABsumL}{9\,588\,342\,676\,640}
 \newcommand{\LmAS}{13\,623\,518\,368\,355}
-\newcommand{\LmLeanModule}{EntropyBounds.TwoSet.Certs.R7A5}
-\newcommand{\LmLeanName}{R7A5}
-\newcommand{\CbLeanModule}{EntropyBounds.Glue.Certs.CL3B6SC}
-\newcommand{\CbLeanName}{CL3B6SC}
-\newcommand{\CbLeanModuleG}{EntropyBounds.GlueG.Certs.CL3B6SC}
-\newcommand{\CbTime}{9}
-\newcommand{\CsTime}{9}
-\newcommand{\CgTime}{3}
-\newcommand{\CrTime}{1}
-\newcommand{\LmTime}{4}
-\newcommand{\CbNeg}{$64$ ($4$)$^{*}$}
-\newcommand{\CsNeg}{$67$ ($5$)$^{*}$}
-\newcommand{\CgNeg}{$41$ ($2$)$^{*}$}
-\newcommand{\CrNeg}{$36$ ($0$)}
-\newcommand{\LmNeg}{$77$ ($12$)$^{*}$}
-\newcommand{\CgMergesNeeded}{19}
-\newcommand{\CbLaws}{321}
-\newcommand{\CsLaws}{321}
-\newcommand{\CgLaws}{321}
-\newcommand{\CrLaws}{321}
-\newcommand{\LmLaws}{12}
-\newcommand{\NegNote}{$^{*}$Each accepted modification is again a valid certificate. For Theorems~\ref{thm:3b} and \ref{thm:3ball} they drop an identification (EL) that the identity does not use (two in \file{\CgFile}) or replace a cross form by its negative or by its double (four in \file{\CbFile}), which leaves the closures unchanged in the groups of the row \emph{Valid in}. For Theorem~\ref{thm:pair}, ten of them add a valid row of type \ref{R9} or \ref{R10} with multiplier $0$, and two change a row of type \ref{R10} or \ref{R3} into another valid instance of its rule.}
-\newcommand{\LmRoundClause}{, with rounding errors of order $10^{-13}$}
-\newcommand{\CbFormList}{$x_0-x_2$, $x_0+x_2$, $x_0-x_4$, $x_0+x_4$, $y_0-y_1$, $y_0+y_1$, $y_0-x_4$, $x_2-x_4$, $x_2+x_4$, $x_0-y_0+y_1$, $x_0+y_0-y_1$, $x_0+y_0+y_1$, $x_0-y_0-x_2$, $x_0+y_0-x_2$, $x_0+y_0+x_2$, $x_0-y_0-x_4$, $x_0+y_1-x_2$, $x_0+y_1+x_2$, $x_0-y_1-x_4$, $x_0-y_1+x_4$, $x_0+y_1-x_4$, $x_0+y_1+x_4$, $x_0-x_2-x_4$, $x_0+x_2-x_4$, $y_0-y_1+x_2$, $y_0+y_1+x_2$, $y_0-y_1-x_4$, $y_0+y_1-x_4^{*}$, $y_0+x_2-x_4$, $y_1+x_2+x_4$, $x_0-y_0+y_1+x_2^{*}$, $x_0+y_0+y_1+x_2$, $x_0+y_0-y_1-x_4$, $x_0+y_0+y_1-x_4$, $x_0+y_0-x_2-x_4$, $x_0+y_0+x_2-x_4$, $x_0+y_1-x_2+x_4$, $y_0-y_1-x_2-x_4$, $y_0-y_1+x_2-x_4$, $x_0+y_0+y_1+x_2-x_4$, $x_0+y_0-y_1-x_2-x_4$, $x_0-y_1-x_2$, $y_0+y_1+x_2-x_4$}
-\newcommand{\CbLemmaTableRows}{$M_{7}$ & $6.94\cdot10^{-6}$ & $x_2$ & $x_0{+}y_0{-}y_1{-}x_2{-}x_4$ & $y_1{+}x_2$ & $x_0{-}x_2{-}x_4$ \\ $M_{7}$ & $5.94\cdot10^{-6}$ & $x_2$ & $x_0{+}y_0{-}y_1{-}x_2{-}x_4$ & $y_1{+}x_2$ & $x_0{+}y_0{-}x_2{-}x_4$ \\ $M_{10}$ & $3.34\cdot10^{-6}$ & $(y_0, x_0{+}y_0{-}y_1{-}x_2{-}x_4)$ & $(x_2, x_0{+}y_0{-}y_1{-}x_4)$ & $(y_1, x_0{+}y_0{-}x_2{-}x_4)$ & $x_0{-}x_4$ \\ $M_{11}$ & $1.76\cdot10^{-5}$ & $(x_0{+}y_0{-}x_4, y_1{+}x_2{+}x_4)$ & $(y_0{+}x_2, y_0{-}y_1{-}x_4)$ & $(y_0, y_1{+}x_2{+}x_4)$ & $(y_1{+}x_2, x_0{+}y_0{-}y_1{-}x_4)$ \\ $M_{15}$ & $3.43\cdot10^{-6}$ & $(y_1{+}x_2, x_0{-}x_4)$ & $(x_0{+}y_0{-}x_4, y_0{+}y_1{+}x_2)$ & $(y_1, x_0{-}x_2{-}x_4)$ & $y_0{+}x_2{-}x_4$ \\ $M_{16}$ & $1.76\cdot10^{-6}$ & $(y_0{+}x_2, y_0{-}y_1{-}x_4)$ & $(x_0{+}y_1, x_0{+}y_0{-}x_4)$ & $(y_1, y_0{-}x_4)$ & $x_0{-}x_4$ \\ $M_{17}$ & $6.13\cdot10^{-6}$ & $(y_1{+}x_2, y_0{-}y_1{-}x_4)$ & $(x_0{+}y_1, x_0{+}y_0{-}x_4)$ & $(x_0{-}x_4, x_0{-}y_0{+}y_1)$ & $y_1$ \\ $M_{57}$ & $2.57\cdot10^{-7}$ & $(y_0{+}x_2, y_0{-}x_4)$ & $(x_0{-}x_2, x_0{+}x_4)$ & $(x_0, x_2{+}x_4)$ & $y_0{+}x_2{-}x_4$ \\ $M_{62}$ & $5.09\cdot10^{-9}$ & $(y_0{+}x_2, y_0{-}x_4)$ & $(x_0{-}x_2, x_0{+}x_4)$ & $(x_0, x_2{+}x_4)$ & $y_0{+}x_2{-}x_4$ \\ DFZ 5 & $6.48\cdot10^{-4}$ & $y_0{+}y_1{+}x_2$ & $y_0{+}x_2{-}x_4$ & $y_0{+}x_2$ & $y_0{+}y_1{+}x_2{-}x_4$ \\ DFZ 5 & $1.52\cdot10^{-4}$ & $x_0{-}x_4$ & $y_0{+}x_2{-}x_4$ & $x_2$ & $x_4$ \\ DFZ 7 & $3.04\cdot10^{-3}$ & $(y_1{+}x_2, x_4)$ & $(x_4, x_0{-}x_2)$ & $(x_2, x_4)$ & $x_0{-}y_1{-}x_2$ \\ DFZ 7 & $2.70\cdot10^{-4}$ & $(y_1{+}x_2, y_0{-}y_1{-}x_4)$ & $(x_0{+}y_0{-}x_4, x_0{-}x_2)$ & $(x_2, y_0{-}x_4)$ & $(y_0{+}x_2{-}x_4, x_0{+}y_0{-}y_1{-}x_4)$ \\ DFZ 7 & $1.95\cdot10^{-5}$ & $(x_0{-}x_2, y_0{-}y_1{-}x_4)$ & $(y_0{+}x_2, y_0{-}y_1{-}x_4)$ & $(x_2, y_0{-}y_1{-}x_4)$ & $x_0{-}y_0{-}x_2$ \\ DFZ 8 & $1.10\cdot10^{-3}$ & $(x_0{+}y_0{-}x_4, x_0{-}x_2)$ & $(x_0{+}y_1, y_0{+}x_2{-}x_4)$ & $(x_0{-}x_4, x_0{-}y_0{-}x_2)$ & $x_0{+}y_1{-}x_2$ \\ DFZ 8 & $4.73\cdot10^{-4}$ & $y_0{-}x_2$ & $(y_0{+}x_2, y_0{-}y_1{-}x_4)$ & $(y_0{+}x_2, y_1{+}x_2)$ & $(y_0{+}x_2, y_0{-}x_4)$ \\ DFZ 8 & $5.03\cdot10^{-5}$ & $(x_0{+}y_1, x_0{+}y_0{-}x_4)$ & $(y_0, x_0{+}y_0{-}x_4)$ & $(x_0, x_0{+}y_0{-}x_4)$ & $x_0{+}y_1{-}x_4$ \\ DFZ 33 & $1.65\cdot10^{-6}$ & $(y_0{+}x_2, y_0{-}y_1{-}x_4)$ & $(x_2, y_0{-}y_1{-}x_4)$ & $(x_0{-}x_2, y_0{-}y_1{-}x_4)$ & $x_2{+}x_4$ \\ DFZ 35 & $2.14\cdot10^{-5}$ & $(x_0{+}y_0{-}x_4, y_1{+}x_2{+}x_4)$ & $(x_0{+}y_1, x_0{-}x_2{-}x_4)$ & $(x_0{-}x_4, x_0{+}y_1{+}x_2)$ & $(y_1{+}x_2{+}x_4, x_0{+}y_0{+}y_1{-}x_4)$ \\ DFZ 56 & $1.71\cdot10^{-4}$ & $(y_0{+}x_2, x_0{-}x_4)$ & $(x_0{-}x_2, x_0{-}x_4)$ & $(x_2, x_0{-}x_4)$ & $x_0{-}y_0{-}x_2$ \\ DFZ 60 & $1.42\cdot10^{-3}$ & $x_0{+}y_0{-}x_2$ & $x_0{+}y_0{+}x_2$ & $x_0{-}y_0{-}x_2$ & $(y_1{+}x_4, x_0{+}y_0{+}y_1{+}x_2{-}x_4)$ \\ DFZ 77 & $3.74\cdot10^{-6}$ & $(y_1, x_0{-}x_2{-}x_4)$ & $(y_0{-}y_1, x_0{-}x_2{-}x_4)$ & $(y_1{+}x_2, x_0{+}y_1{-}x_4)$ & $x_0{+}y_0{-}y_1{-}x_4$ \\ DFZ 107 & $2.67\cdot10^{-7}$ & $(y_1{+}x_4, x_0{+}y_1{-}x_2)$ & $(x_0{-}x_2{-}x_4, y_0{-}y_1{+}x_2)$ & $(y_1, x_0{-}x_2{-}x_4)$ & $y_0{-}y_1{+}x_2{-}x_4$ \\ DFZ 109 & $1.25\cdot10^{-3}$ & $y_1{-}x_4$ & $(x_0{+}y_0{-}x_4, y_1{+}x_4)$ & $(x_0{+}y_1, y_1{+}x_4)$ & $(y_1{+}x_4, y_0{+}y_1)$ \\ DFZ 109 & $1.25\cdot10^{-3}$ & $(x_0{+}y_1, y_0{+}x_2)$ & $(x_0{+}y_1, y_1{+}x_2)$ & $(x_0{+}y_1, x_2)$ & $y_0{+}y_1{+}x_2$ \\ DFZ 109 & $1.22\cdot10^{-3}$ & $(x_0{+}y_0, y_1{+}x_2)$ & $(x_0{+}y_0, y_0{+}x_2)$ & $(x_0{+}y_0, x_2)$ & $y_0{+}y_1{+}x_2$ \\ DFZ 109 & $9.62\cdot10^{-4}$ & $(y_0, y_1{+}x_4)$ & $(y_0, x_0{+}y_0{-}x_4)$ & $(y_0, x_4)$ & $x_0{+}y_0{-}y_1{-}x_4$ \\ DFZ 109 & $1.80\cdot10^{-4}$ & $(x_0{+}y_0{-}x_4, x_0{-}x_2)$ & $(y_0, x_0{-}x_2)$ & $(x_0{+}y_0, y_0{+}x_2)$ & $y_0{-}y_1{-}x_2{-}x_4$ \\ DFZ 109 & $1.14\cdot10^{-4}$ & $(x_0{+}y_1, x_0{-}y_0{-}x_2)$ & $(x_0{+}y_1, x_0{-}x_2{-}x_4)$ & $(x_0{+}y_1, y_1{+}x_4)$ & $y_0{+}x_2$ \\ DFZ 109 & $8.16\cdot10^{-5}$ & $x_0{-}x_4$ & $x_0{+}y_0{+}y_1{+}x_2{-}x_4$ & $x_0{+}y_0{-}x_4$ & $x_0{+}y_1{+}x_2$ \\ DFZ 109 & $6.47\cdot10^{-5}$ & $(x_0{+}y_1, x_0{+}y_0{-}x_4)$ & $(x_0{+}y_1, x_4)$ & $(x_0{+}y_1, y_1{+}x_4)$ & $(x_0{+}y_1, y_0{-}x_4)$ \\ DFZ 109 & $3.87\cdot10^{-5}$ & $(x_0{+}y_0, y_1{+}x_2)$ & $(x_0{+}y_1, y_1{+}x_2)$ & $(x_0, y_1{+}x_2)$ & $x_0{+}y_0{-}x_2$ \\ DFZ 109 & $1.55\cdot10^{-5}$ & $x_0{-}x_4$ & $x_0{-}y_0{-}x_2$ & $x_0$ & $x_0{-}x_2{-}x_4$ \\ DFZ 109 & $1.39\cdot10^{-5}$ & $x_4$ & $x_0{+}y_0{+}y_1{-}x_4$ & $y_0{-}x_4$ & $x_0{+}y_1{-}x_4$ \\ DFZ 109 & $3.01\cdot10^{-6}$ & $x_0{-}y_0$ & $(x_0, y_0{-}y_1{-}x_4)$ & $(x_0, x_0{+}y_0{-}x_4)$ & $y_0{-}y_1$ \\ }
 %% END MACROS
-\newcommand{\ZenodoDOI}{10.5281/zenodo.23687856}
-\newcommand{\RepoURL}{https://github.com/tejasvi/sum-difference-exponents/tree/v3}
-\newcommand{\CgLeanModule}{EntropyBounds.GlueZ.Certs.C3BALL}
-\newcommand{\CgLeanName}{C3BALL}
+\newcommand{\ZenodoDOI}{10.5281/zenodo.23716681}
+\newcommand{\RepoURL}{https://github.com/tejasvi/sum-difference-exponents/tree/v4}
 
 \begin{document}
 
@@ -191,7 +92,8 @@
 \keywords{Sumsets, difference sets, sum-difference exponents, arithmetic Kakeya conjecture, Shannon entropy, copy lemma, non-Shannon inequalities, linear programming, computer-assisted proof}
 
 \begin{abstract}
-For finite sets $A,B$ of real numbers and $G\subseteq A\times B$, Katz and Tao proved in 1999 that $\{a-b:(a,b)\in G\}$ has at most $N^{11/6}$ elements whenever $A$, $B$ and $\{a+b:(a,b)\in G\}$ have at most $N$ elements. We lower the exponent $11/6$ to $\CbShort$. Without non-Shannon inequalities we obtain the exponent $\CgShort$, but this exponent is valid in all abelian groups. We also prove $|X-Y|\le|X+Y|^{\LmLamShort}$ for all finite sets $X,Y$ of integers. This improves the exponent $1.4543$ of Kleinwaks, and through his transfer theorem it lowers the upper bound for the sum-difference constant of Gyarmati, Hennecart and Ruzsa from $1.3124$ to $\LmCaShort$. Both proofs establish entropy inequalities for a random pair. We construct several copies of the pair on a common probability space, glued by the copy lemma for the first problem and independent for the second, and use cross forms, which are integer combinations of coordinates of different copies. With rational weights found by linear programming, we combine Shannon inequalities among the joint entropies of these forms\ and, for the first problem, also non-Shannon inequalities that we prove from the copy lemma. For each bound, a checker recomputes the inequalities from their definitions and verifies the combination in exact rational arithmetic, and a second checker confirms the result.\ The proofs of all four new bounds\ have also been checked in the Lean~4 proof assistant.\end{abstract}
+For finite sets $A,B$ of real numbers and $G\subseteq A\times B$, Katz and Tao proved in 1999 that $\{a-b:(a,b)\in G\}$ has at most $N^{11/6}$ elements whenever $A$, $B$ and $\{a+b:(a,b)\in G\}$ have at most $N$ elements; by an argument of Bourgain, bounds of this kind give lower bounds for the dimension of Kakeya sets. We lower the exponent $11/6$ to $1.8273$, and to $1.8295$ in every abelian group. We also prove $|X-Y|\le|X+Y|^{1.4209}$ for all finite sets $X,Y$ of integers, improving the exponent $1.4543$ of Kleinwaks; through his transfer theorem, this lowers the upper bound for the sum-difference constant of Gyarmati, Hennecart and Ruzsa from $1.3124$ to $1.2962$. Both proofs add up entropy inequalities among integer combinations of coordinates of several copies of a random pair, with rational weights found by linear programming; all four bounds are also proved in Lean~4.
+\end{abstract}
 
 \maketitle
 
@@ -201,27 +103,18 @@ For finite subsets $A,B$ of an abelian group and $G\subseteq A\times B$ we write
 \[
 A\gp B=\{a+b:(a,b)\in G\},\qquad A\gm B=\{a-b:(a,b)\in G\}.
 \]
-Bourgain \cite{Bou99} showed that bounds $|A\gm B|\le N^{2-\varepsilon}$, valid whenever $|A|,|B|,|A\gp B|\le N$, give lower bounds for the dimension of Kakeya sets, and he proved such a bound with $\varepsilon=1/13$. Katz and Tao \cite{KT99} proved it with $\varepsilon=1/6$ in any abelian group. Following Tao's list of optimization constants \cite[page 3b]{TaoC}, let $C_{3b}$ be the least exponent $C$ such that
+Bourgain \cite{Bou99} showed that bounds $|A\gm B|\le N^{2-\varepsilon}$, valid whenever $|A|,|B|,|A\gp B|\le N$, give lower bounds for the dimension of Kakeya sets, and he proved such a bound with $\varepsilon=1/13$. Katz and Tao \cite{KT99} proved it with $\varepsilon=1/6$ in any abelian group. The Kakeya bounds obtained in this way are no longer the best known in any dimension \cite[page 3b]{TaoC}. Let $C_{3b}$ be the least exponent $C$ such that
 \begin{equation}\label{eq:setform}
 |A\gm B|\le\max\bigl(|A|,|B|,|A\gp B|\bigr)^{C}
 \end{equation}
-for all finite $A,B\subset\R$ and $G\subseteq A\times B$.\footnote{The definition of $A\overset{G}{\pm}B$ on that page has $a\in A$, $b\in B$. The restriction to $(a,b)\in G$ is the intended one, as in \cite{KT99,GR19}.} By \cite{GR19} (see also \cite[\S1]{Tao25}), $C_{3b}$ is also the least $C$ such that
+for all finite $A,B\subset\R$ and $G\subseteq A\times B$. By \cite{GR19} (see also \cite[\S1]{Tao25}), $C_{3b}$ is also the least $C$ such that
 \begin{equation}\label{eq:entform}
 H(X-Y)\le C\max\bigl(H(X),H(Y),H(X+Y)\bigr)
 \end{equation}
-for all real random variables $X,Y$ with finitely many values, not necessarily independent, where $H$ denotes Shannon entropy. We prove our bounds in both forms (Lemma~\ref{lem:reduction}). This is the constant $C_{6.30}(\{0,1,\infty\};-1)$ of Problem~6.30 in \cite{GGTW25} and the sum-difference exponent $\mathrm{SD}(\{0,1,\infty\};-1)$ of \cite{Tao25}. Its relation to the arithmetic Kakeya conjecture is discussed in \cite{KT02,GR19,Tao25}. The upper bound $11/6=1.8333\ldots$ of \cite{KT99} is the best one recorded in \cite{GGTW25,TaoC}, and the lower bounds recorded there are slightly above $1.7789$ \cite{Le15,MI26,TaoC}. Farnamfar \cite{Fa26a,Fa26b} proves obstructions to improving $11/6$ by combinatorial constructions that certify upper bounds through a score: literal ladders cannot improve it, and an improving construction must have dimension at least three and avoid several further families. The proof of Theorem~\ref{thm:3b} uses entropy inequalities instead of such constructions.
+for all real random variables $X,Y$ with finitely many values, not necessarily independent, where $H$ denotes Shannon entropy. We prove our bounds in both forms (Lemma~\ref{lem:reduction}). The relation of $C_{3b}$ to the arithmetic Kakeya conjecture is discussed in \cite{KT02,GR19,Tao25}. The notation $C_{3b}$ is that of Tao's list of optimization constants \cite{TaoC}, where it is constant 3b, and $C_{3b}$ is also Problem~6.30 of \cite{GGTW25}. The upper bound $11/6=1.8333\ldots$ of \cite{KT99} is the best one recorded in these two sources, and the lower bounds recorded there are slightly above $1.7789$ \cite{Le15,MI26}. Farnamfar \cite{Fa26a,Fa26b} proves that several families of combinatorial constructions that certify upper bounds for $C_{3b}$ cannot improve $11/6$, and that an improving construction must have dimension at least three. The proof of Theorem~\ref{thm:3b} uses entropy inequalities instead of such constructions.
 
 \begin{theorem}\label{thm:3b}
-Let
-\begin{align*}
-\lambda_X&=\CbLamXd,\\
-\lambda_Y&=\CbLamYd,\\
-\lambda_S&=\CbLamSd,
-\end{align*}
-so that
-\[
-\lambda_X+\lambda_Y+\lambda_S=\CbFrac<\CbUp.
-\]
+There are rational numbers $\lambda_X\approx0.706543$, $\lambda_Y\approx0.648446$ and $\lambda_S\approx0.472307$, given exactly in Appendix~\ref{app:const}, with sum less than $\CbUp$, such that the following hold.
 \begin{enumerate}[label=\textup{(\alph*)}]
 \item\label{thm:3b:ent} If $X,Y$ are random variables with finitely many values in a torsion-free abelian group, then $H(X-Y)\le\lambda_XH(X)+\lambda_YH(Y)+\lambda_SH(X+Y)$.
 \item\label{thm:3b:set} If $A,B$ are finite subsets of a torsion-free abelian group and $G\subseteq A\times B$, then $|A\gm B|\le|A|^{\lambda_X}|B|^{\lambda_Y}|A\gp B|^{\lambda_S}$.
@@ -255,19 +148,27 @@ C_{3a}\le2-\frac1\lambda=\LmCaFrac<\LmCaUp.
 \end{corollary}
 
 \begin{remark}\label{rem:erdos}
-A set $A$ of $n$ integers determines at most $n^{\CbUp}$ distinct positive common differences of three-term arithmetic progressions. This improves the exponent $11/6$ of Katz and Tao \cite{KT99} recorded for Erd\H{o}s problem \#1097 \cite{EP1097}, which asks how many such differences there can be; the problem page attributes to Chan the observation that this problem is ``exactly equivalent'' to the sums-differences question of Bourgain recalled above. For the proof, choose for each such difference $d>0$ an $a_d$ with $a_d,a_d+d,a_d+2d\in A$, and let $G$ consist of the pairs $(a_d+2d,a_d)$. Their differences $2d$ are distinct, so $|A\gm A|$ is the number of such $d$, and their sums $2(a_d+d)$ lie in $\{2a:a\in A\}$, so $|A\gp A|\le n$. Part~\ref{thm:3b:set} of Theorem~\ref{thm:3b} with $B=A$ gives $|A\gm A|\le n^{\lambda_X+\lambda_Y+\lambda_S}\le n^{\CbUp}$.
+A set $A$ of $n$ integers determines at most $n^{\CbUp}$ distinct positive common differences of three-term arithmetic progressions. This improves the exponent $11/6$ of Katz and Tao \cite{KT99} for Erd\H{o}s problem \#1097, which asks how many such differences there can be. Chan observed that this problem is equivalent to the sums-differences question of Bourgain recalled above \cite{EP1097}. For the proof, choose for each such difference $d>0$ an $a_d$ with $a_d,a_d+d,a_d+2d\in A$, and let $G$ consist of the pairs $(a_d+2d,a_d)$. Their differences $2d$ are distinct, so $|A\gm A|$ is the number of such $d$, and their sums $2(a_d+d)$ lie in $\{2a:a\in A\}$, so $|A\gp A|\le n$. Part~\ref{thm:3b:set} of Theorem~\ref{thm:3b} with $B=A$ gives $|A\gm A|\le n^{\lambda_X+\lambda_Y+\lambda_S}\le n^{\CbUp}$.
 \end{remark}
 
 
 \subsection*{The method}
-Both proofs are entropy arguments in the style of \cite{Kle26}; entropy methods in additive combinatorics are developed in \cite{Ru09,Tao10}. In both proofs the main new ingredient is a larger family of random variables: integer combinations of coordinates of different copies of a random pair for Theorems~\ref{thm:3b} and~\ref{thm:3ball}, and further independent variables for Theorem~\ref{thm:pair}. For Theorems~\ref{thm:3b} and~\ref{thm:3ball} we take a random pair $(X,Y)$ such that $X-Y$ is injective on its support. Three applications of the copy lemma put six copies of the pair on one probability space. This configuration is a variant, in entropy form, of the one behind the bound $11/6$ of \cite{KT99} (Proposition~\ref{prop:kt}). Integer combinations of the coordinates of the copies are random variables, and Shannon inequalities hold for their joint entropies. We call the combinations that mix coordinates of different copies \emph{cross forms}. For a fixed finite set of cross forms, a linear program finds a nonnegative combination that bounds $H(X,Y)$ by $\lambda_XH(X)+\lambda_YH(Y)+\lambda_SH(X+Y)$. It combines Shannon inequalities, the identities given by the copy lemma and non-Shannon inequalities, each of them proved from the copy lemma. We call such a combination a \emph{certificate}. Linear programs over linear forms of glued copies of a random pair, with copy-lemma variables, were used before in \cite{MI26L} for the Katz--Tao problem with many slopes. With $\CbFormsUsed$ cross forms this gives Theorem~\ref{thm:3b}, and without non-Shannon inequalities $\CgFormsUsed$ cross forms give Theorem~\ref{thm:3ball}. Appendix~\ref{app:short} lists a certificate with five cross forms and $72$ Shannon inequalities that proves the exponent $\CrSlash<11/6$ in every abelian group.
+Both proofs are entropy arguments in the style of \cite{Kle26}; entropy methods in additive combinatorics are developed in \cite{Ru09,Tao10}. For Theorems~\ref{thm:3b} and~\ref{thm:3ball} we take a random pair $(X,Y)$ such that $X-Y$ is injective on its support. Three applications of the copy lemma put six copies of the pair on one probability space. This configuration is a variant, in entropy form, of the one behind the bound $11/6$ of \cite{KT99}: in it
+\[
+6H(X,Y)=4H(X)+4H(Y)+3H(X+Y)-\Delta_\KT,
+\]
+where $\Delta_\KT\ge0$ is a sum of five mutual informations between coordinates and sums of the copies (Proposition~\ref{prop:kt}). An improvement of $11/6$ therefore amounts to a lower bound for $\Delta_\KT$ in terms of $H(X)$, $H(Y)$ and $H(X+Y)$. Integer combinations of the coordinates of the copies are random variables, and Shannon inequalities hold for their joint entropies. The forms $x$, $y$, $x+y$ and $x-y$ of a single copy $(x,y)$ do not suffice (Remark~\ref{rem:cross}). We call the other combinations \emph{cross forms}. They are new random variables built from several copies at once, and Shannon inequalities that involve them constrain the joint law of the copies in ways that the standard forms do not detect. For example, if two copies $(x_0,y_0)$ and $(x_2,y_0)$ share their second coordinate, then $x_0+y_0+x_2$ is a cross form. Shannon inequalities among five cross forms already bound $\Delta_\KT$ from below and give the exponent $\CrSlash<11/6$ in every abelian group (Appendix~\ref{app:short}).
 
-For Theorem~\ref{thm:pair} we start from Kleinwaks' coupling, a random pair $(X_1,Y_1)$ uniform on a set $\Gamma\subseteq X\times Y$ with one pair for each element of $X-Y$. Kleinwaks uses two independent copies of this pair and the entropies $h(i,j)$ of sums of independent copies of its marginals. We add \LmWadd, independent of the two copies and of each other.\ Besides symmetries of the whole configuration, we use partial symmetries\ and partial reflections, which act only on the independent blocks that occur in a set of forms (Section~\ref{sec:conf2}).\ Shannon inequalities among integer combinations of these coordinates give an inequality between $\log|X-Y|$, $\log|X+Y|$ and $\LmHcount$ values of $h$ (Proposition~\ref{prop:config}). Finitely many of Kleinwaks' inequalities for $h$ eliminate these values (Lemma~\ref{lem:grid}). In contrast to \cite[Proposition~5.1]{Kle26}, no non-Shannon inequality is needed.
+For a fixed finite set of cross forms, a linear program finds a nonnegative combination that bounds $H(X,Y)$ by $\lambda_XH(X)+\lambda_YH(Y)+\lambda_SH(X+Y)$; it combines Shannon inequalities, the identities given by the copy lemma and non-Shannon inequalities, each of the latter proved from the copy lemma. We call such a combination a \emph{certificate}. Linear programs over linear forms of glued copies of a random pair, with copy-lemma variables, were used before in \cite{MI26L} for the Katz--Tao problem with many slopes. With $\CbFormsUsed$ cross forms this gives Theorem~\ref{thm:3b}, and without non-Shannon inequalities $\CgFormsUsed$ cross forms give Theorem~\ref{thm:3ball}.
+
+For Theorem~\ref{thm:pair} we start from Kleinwaks' coupling, a random pair $(X_1,Y_1)$ uniform on a set $\Gamma\subseteq X\times Y$ with one pair for each element of $X-Y$. Kleinwaks uses two independent copies of this pair and the entropies $h(i,j)$ of sums of independent copies of its marginals. We add \LmWadd, independent of the two copies and of each other. Besides symmetries of the whole configuration, we use partial symmetries and partial reflections, which act only on the independent blocks that occur in a set of forms (Section~\ref{sec:conf2}). Shannon inequalities among integer combinations of these coordinates give an inequality between $\log|X-Y|$, $\log|X+Y|$ and $\LmHcount$ values of $h$ (Proposition~\ref{prop:config}). Finitely many of Kleinwaks' inequalities for $h$ eliminate these values (Lemma~\ref{lem:grid}). With the two copies alone, only sums of at most two coordinates are identified with values of $h$; the added variables bring in sums of up to five independent variables (Remark~\ref{rem:w}). Unlike the two-copy inequality of \cite[Proposition~5.1]{Kle26}, which uses ten instances of the non-Shannon families of Mat\'u\v{s} \cite{Mat07} and of Csirmaz and Csirmaz \cite{CC26}, our certificate uses only Shannon inequalities.
+
+We do not know how far larger configurations, more cross forms or further non-Shannon inequalities can lower the two exponents.
 
 \subsection*{Verification}
-The weights in the certificates are exact rational numbers, obtained from floating-point solutions of the linear programs. Section~\ref{sec:verify} describes how each certificate is verified in exact rational arithmetic and accepted by a second, independently written checker.\ For the inequalities proved inside the certificate of Theorem~\ref{thm:3b}, the second checker follows the steps of the first, and the Lean proof checks them separately.\ Theorem~\ref{thm:3b} (with its extension to abelian groups without $2$-torsion in Remark~\ref{rem:s30}), Theorems~\ref{thm:3ball} and~\ref{thm:pair}, Corollary~\ref{cor:3a} and the bound of Remark~\ref{rem:erdos}\ also have formal proofs in Lean~4, obtained by translating the certificates into Lean.\ Table~\ref{tab:verify} in Section~\ref{sec:verify} summarizes the checks.
+The weights in the certificates are exact rational numbers, obtained from floating-point solutions of the linear programs. Section~\ref{sec:verify} describes how each certificate is verified in exact rational arithmetic by two independently written checkers and how the results above are proved in Lean~4.
 
-Section~\ref{sec:tools} collects the entropy tools. Section~\ref{sec:3b} proves Theorems~\ref{thm:3b} and~\ref{thm:3ball}, and Section~\ref{sec:pair} proves Theorem~\ref{thm:pair} and Corollary~\ref{cor:3a}, including a proof of Kleinwaks' transfer theorem. Appendix~\ref{app:short} lists the short certificate, and\ Appendix~\ref{app:forms}\ the cross forms and the non-Shannon inequalities of the certificate for Theorem~\ref{thm:3b}.
+Section~\ref{sec:tools} collects the entropy tools. Section~\ref{sec:3b} proves Theorems~\ref{thm:3b} and~\ref{thm:3ball}, and Section~\ref{sec:pair} proves Theorem~\ref{thm:pair} and Corollary~\ref{cor:3a}, including a proof of Kleinwaks' transfer theorem. Appendix~\ref{app:short} works through the short certificate.
 
 \section{Entropy tools}\label{sec:tools}
 
@@ -329,7 +230,7 @@ Let $F$ be a finite set of forms and let $f$ be a form.
 For \ref{cl:span} write $f=\sum_{g\in F}a_gg+r$ with $r$ in the subgroup generated by $\mathcal R$, so that $f(Z)=\sum_ga_gg(Z)$ almost surely. For \ref{cl:div}, $cf(Z)$ is a function of $(g(Z))_{g\in F}$ by \ref{cl:span}, and $u\mapsto cu$ is injective. Part \ref{cl:inj} is immediate.
 \end{proof}
 
-Fix a finite ground set $E$ of forms and a list of pairs $(x,y)$ as in \ref{cl:inj}. The \emph{closure} $\cl F$ of $F\subseteq E$ is the smallest subset of $E$ that contains $F$ and is closed under the rules \ref{cl:span}--\ref{cl:inj}, where \ref{cl:div} is used exactly for the integers $c\ne0$ for which $u\mapsto cu$ is injective on $\GG$, for example for all $c\ne0$ if $\GG$ is torsion-free. By Lemma~\ref{lem:closure}, $H[\cl F]=H[F]$. The checkers compute closures with rules \ref{cl:span} and \ref{cl:div} together, by linear algebra over $\Q$. Table~\ref{tab:verify} records whether each certificate uses rule~\ref{cl:div} and, in part~(a), with which multipliers~$c$.
+Fix a finite ground set $E$ of forms and a list of pairs $(x,y)$ as in \ref{cl:inj}. The \emph{closure} $\cl F$ of $F\subseteq E$ is the smallest subset of $E$ that contains $F$ and is closed under the rules \ref{cl:span}--\ref{cl:inj}, where \ref{cl:div} is used exactly for the integers $c\ne0$ for which $u\mapsto cu$ is injective on $\GG$, for example for all $c\ne0$ if $\GG$ is torsion-free. By Lemma~\ref{lem:closure}, $H[\cl F]=H[F]$.
 
 \section{The Kakeya-type exponent}\label{sec:3b}
 
@@ -410,7 +311,7 @@ On the other hand $(s_3-s_5)+(x_0-y_4)=x_2-y_0=d_2$, so by (INJ) the forms $x_0,
 Comparing the two expressions for $H(\Omega)$, we obtain the identity. No step uses rule \ref{cl:div}, so the argument is valid in every abelian group.
 \end{proof}
 
-Combined with Lemma~\ref{lem:reduction}, Proposition~\ref{prop:kt} yields the exponent $11/6$. It adapts the counting argument in \cite[\S3]{KT99} to entropy. In this configuration an improvement of $11/6$ amounts to a lower bound for $\Delta_\KT$.\ Appendix~\ref{app:short} gives one: Shannon inequalities among five cross forms prove $153\,\Delta_\KT\ge8H(Y)+9H(X+Y)-16H(X)$, and with Proposition~\ref{prop:kt} this gives $459H(X,Y)\le314H(X)+302H(Y)+225H(X+Y)$.
+Combined with Lemma~\ref{lem:reduction}, Proposition~\ref{prop:kt} yields the exponent $11/6$. It adapts the counting argument in \cite[\S3]{KT99} to entropy.
 
 \subsection{Certificates}\label{sec:lp}
 Fix a finite set $E$ of cross forms and take as ground set the standard forms together with $E$, with the pairs $(x_v,y_v)$ in rule \ref{cl:inj}. Consider the linear program with one variable $h(F)$ for each closed set $F$ and $h(\emptyset)=0$, which maximizes $h(\cl\{x_0,y_0\})$ subject to the following constraints, where $K$ runs over closed sets and $i,j$ over the ground set:
@@ -425,24 +326,28 @@ For every injective pair with $\max(a,b,c)>0$, the vector $F\mapsto H[F]/\max(a,
 \begin{equation}\label{eq:identity}
 h(\cl\{x_0,y_0\})+\sum_k\mu_kR_k=\lambda_X\,h(\cl\{x_0\})+\lambda_Y\,h(\cl\{y_0\})+\lambda_S\,h(\cl\{x_0+y_0\})
 \end{equation}
-holds identically in the variables $h$ after the identifications \ref{lp:el}. At the entropy vector of an injective pair the rows of types \ref{lp:sh} and \ref{lp:matus} are nonnegative and the rows of type \ref{lp:ci} vanish, so \eqref{eq:inj} follows from \eqref{eq:identity}. This conclusion does not depend on how the certificate was found.
+holds identically in the variables $h$ after the identifications \ref{lp:el}. At the entropy vector of an injective pair the rows of types \ref{lp:sh} and \ref{lp:matus} are nonnegative and the rows of type \ref{lp:ci} vanish, so \eqref{eq:inj} follows from \eqref{eq:identity}.
 
 We solve the linear programs with HiGHS \cite{HiGHS} in floating point. Rows of type \ref{lp:matus} are added when the current optimum violates them. For the certificate we keep the rows whose floating-point multipliers exceed a tolerance and solve the dual equations on these rows exactly over $\Q$.
 
 \subsection{Proofs of Theorems \ref{thm:3b} and \ref{thm:3ball}}
 
 \begin{proof}[Proof of Theorem~\ref{thm:3b}]
-The certificate for Theorem~\ref{thm:3b}, in the file \file{\CbFile.json}, uses the configuration \eqref{eq:config}, cross forms from Table~\ref{tab:forms} and identifications (EL). Its $\CbRows$ rows are inequalities of both kinds in \ref{lp:sh} ($\CbSub$ of the first kind and $\CbMono$ of the second), the identities (CI)\ and applications of the inequalities that the certificate proves by Lemma~\ref{lem:copyineq}, listed in Table~\ref{tab:lemmas}; Table~\ref{tab:verify}(a) gives the remaining counts. Its coefficients $\lambda_X,\lambda_Y,\lambda_S$ are those of Theorem~\ref{thm:3b}, and the checkers of Section~\ref{sec:verify} verify \eqref{eq:identity}. The closures use rule \ref{cl:div} of Lemma~\ref{lem:closure}, so \eqref{eq:inj} holds for injective pairs in torsion-free groups, and Lemma~\ref{lem:reduction} gives \ref{thm:3b:ent} and \ref{thm:3b:set}. Since $\R$ is torsion-free, $C_{3b}\le\lambda_X+\lambda_Y+\lambda_S$.\ The proved inequalities include Mat\'u\v{s}'s inequality for $s\le\CbLemMatusMax$ and the inequalities numbered \CbLemDFZ\ in \cite[Section~VIII]{DFZ11}, so the proof uses only Shannon inequalities and Lemma~\ref{lem:copy}.\end{proof}
+The certificate for Theorem~\ref{thm:3b} \cite{Cert} uses the configuration \eqref{eq:config}, $\CbFormsUsed$ cross forms and identifications (EL). Its rows are inequalities of both kinds in \ref{lp:sh}, the identities (CI) and applications of the inequalities that the certificate proves by Lemma~\ref{lem:copyineq}. Its coefficients are the numbers $\lambda_X,\lambda_Y,\lambda_S$ of Theorem~\ref{thm:3b}, and the weighted rows satisfy \eqref{eq:identity}. The closures use rule \ref{cl:div} of Lemma~\ref{lem:closure}, so \eqref{eq:inj} holds for injective pairs in torsion-free groups, and Lemma~\ref{lem:reduction} gives \ref{thm:3b:ent} and \ref{thm:3b:set}. Since $\R$ is torsion-free, $C_{3b}\le\lambda_X+\lambda_Y+\lambda_S$. The proved inequalities include Mat\'u\v{s}'s inequality for $s\le\CbLemMatusMax$ and the inequalities numbered \CbLemDFZ\ in \cite[Section~VIII]{DFZ11}, so the proof uses only Shannon inequalities and Lemma~\ref{lem:copy}.\end{proof}
 
 \begin{remark}\label{rem:s30}
-This certificate applies rule \ref{cl:div} with \CbDiv\ only (Table~\ref{tab:verify}), so Theorem~\ref{thm:3b} holds in all abelian \CbDomain. \end{remark}
+This certificate applies rule \ref{cl:div} with \CbDiv\ only, so Theorem~\ref{thm:3b} holds in all abelian \CbDomain. \end{remark}
+
+\begin{remark}\label{rem:weight}
+Among the Shannon inequalities of the certificate for Theorem~\ref{thm:3b}, which all have unit coefficients on their entropies, the largest total multipliers fall on those that contain the cross forms $y_0-x_4$, $x_0-x_2-x_4$, $x_0+y_1+x_2$ and $x_0-x_2$. The first and the third of these are among the five cross forms of Appendix~\ref{app:short}, all of which occur in the certificate.
+\end{remark}
 
 \begin{proof}[Proof of Theorem~\ref{thm:3ball}]
-The certificate for Theorem~\ref{thm:3ball}, in the file \file{\CgFile.json}, combines inequalities of type \ref{lp:sh} with the identities (CI), after identifications (EL), and uses no row of type \ref{lp:matus}; Table~\ref{tab:verify}(a) gives its counts. Its coefficients $\lambda$ are those of Theorem~\ref{thm:3ball}. For each set of forms in it, the closure with rule \ref{cl:div} equals the closure without it (Table~\ref{tab:verify}), and the relations of Section~\ref{sec:config} have integer coefficients. Hence the rules it uses are valid in any abelian group, and Lemma~\ref{lem:reduction} applies.
+The certificate for Theorem~\ref{thm:3ball} \cite{Cert} combines inequalities of type \ref{lp:sh} with the identities (CI), after identifications (EL), and uses no row of type \ref{lp:matus}. Its coefficients $\lambda$ are those of Theorem~\ref{thm:3ball}. For each set of forms in it, the closure with rule \ref{cl:div} equals the closure without it, and the relations of Section~\ref{sec:config} have integer coefficients. Hence the rules it uses are valid in any abelian group, and Lemma~\ref{lem:reduction} applies.
 \end{proof}
 
 \begin{remark}\label{rem:cross}
-Cross forms are what make the improvement possible: on the configuration \eqref{eq:config} with standard forms only, the floating-point optimum of the linear program with constraints \ref{lp:sh}, \ref{lp:ci}, \ref{lp:el} and \ref{lp:norm} is $11/6$, the value of Proposition~\ref{prop:kt}. Adding to the ground set any three of the $65$ forms with coefficients $\pm1$ on at most three free coordinates does not lower this optimum, while the five cross forms of Appendix~\ref{app:short} lower it to $\CrSlash$.
+Cross forms are what make the improvement possible: on the configuration \eqref{eq:config} with standard forms only, the floating-point optimum of the linear program with constraints \ref{lp:sh}, \ref{lp:ci}, \ref{lp:el} and \ref{lp:norm} is $11/6$, the value of Proposition~\ref{prop:kt}. Adding to the ground set any three of the $65$ forms with coefficients $\pm1$ on at most three free coordinates does not lower this optimum, while the five cross forms of Appendix~\ref{app:short} do.
 \end{remark}
 
 \section{The two-set exponent}\label{sec:pair}
@@ -487,18 +392,18 @@ In the setting of Section~\ref{sec:kl},
 \end{proposition}
 
 \begin{proof}
-The certificate for Theorem~\ref{thm:pair}, in the file \file{\LmFile.json}, lists $\LmConfig$ instances of the rules of Section~\ref{sec:conf2} with rational multipliers, each for the configuration of $\Gamma$ or of $\Gamma'$. Besides Shannon inequalities among joint entropies of forms and \ifnum\LmBsum=1 one support inequality\else $\LmBsum$ support inequalities\fi\ \ref{R6}, they are identities \ref{R2}--\ref{R5}, \ref{R9}\ and~\ref{R10}; Table~\ref{tab:verify}(b) gives the number of each kind. The multipliers of the inequalities are nonnegative. In the weighted sum, after each $H[F]$ is replaced by $H[\cl F]$, the coefficients of all joint entropies cancel, and what remains is the stated inequality.
+The certificate for Theorem~\ref{thm:pair} \cite{Cert} lists instances of the rules of Section~\ref{sec:conf2} with rational multipliers, each for the configuration of $\Gamma$ or of $\Gamma'$. Besides Shannon inequalities among joint entropies of forms and $\LmBsum$ support inequalities \ref{R6}, they are identities \ref{R2}--\ref{R5}, \ref{R9} and~\ref{R10}. The multipliers of the inequalities are nonnegative. In the weighted sum, after each $H[F]$ is replaced by $H[\cl F]$, the coefficients of all joint entropies cancel, and what remains is the stated inequality.
 \end{proof}
 
 \begin{lemma}\label{lem:grid}
-Let $L\in\R$ and $h\colon\{0,\dots,\LmDepth\}^2\to\R$ satisfy \ref{G1}--\ref{G3}\ whenever all indices involved are at most $\LmDepth$. Then
+Let $L\in\R$ and $h\colon\{0,\dots,\LmDepth\}^2\to\R$ satisfy \ref{G1}--\ref{G3} whenever all indices involved are at most $\LmDepth$. Then
 \begin{multline*}
 \LmDispB.
 \end{multline*}
 \end{lemma}
 
 \begin{proof}
-The inequality is a sum of $\LmGrid$ instances of \ref{G1}--\ref{G3}\ with nonnegative rational multipliers, listed in the certificate: $\LmConcx$ and $\LmConcy$ instances of the two concavity inequalities, $\LmLink$ of \ref{G3}, $\LmMon$ of the monotonicity inequalities in \ref{G2}.
+The inequality is a sum of instances of \ref{G1}--\ref{G3} with nonnegative rational multipliers, listed in the certificate.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:pair}]
@@ -506,7 +411,7 @@ If $X$ or $Y$ is empty, both sides vanish. For nonempty $X,Y\subset\Z$, the sum 
 \end{proof}
 
 \begin{remark}\label{rem:w}
-The certificate uses only Shannon inequalities, while the two-copy inequality of \cite[Proposition~5.1]{Kle26} uses ten instances of the non-Shannon families of Mat\'u\v{s} \cite{Mat07} and of Csirmaz and Csirmaz \cite{CC26}. The gain over \cite{Kle26} comes from the variables in $\mathcal W$: for the configuration of $D_0$ and $D_1$ alone, with all forms whose coefficients lie in $\{-1,0,1\}$ and rules \ref{R1}--\ref{R7}, the floating-point optimum of the Shannon linear program is $1.4621$, the optimum of \ref{G1}--\ref{G4} alone at depth $12$.
+The gain over \cite{Kle26} comes from the variables in $\mathcal W$: for the configuration of $D_0$ and $D_1$ alone, with all forms whose coefficients lie in $\{-1,0,1\}$ and rules \ref{R1}--\ref{R7}, the floating-point optimum of the Shannon linear program is $1.4621$, larger than Kleinwaks' exponent $\lambda_\infty$ and equal to the optimum of \ref{G1}--\ref{G4} alone for indices up to $12$.
 \end{remark}
 
 \subsection{The transfer theorem}\label{sec:transfer}
@@ -542,139 +447,45 @@ The number $\lambda\ge1$ of Theorem~\ref{thm:pair} satisfies the hypothesis of T
 
 \section{Verification}\label{sec:verify}
 
-The checkers \file{check630.py} (for the certificates of Section~\ref{sec:3b}\ and Appendix~\ref{app:short}) and \file{check3.py} (for that of Section~\ref{sec:pair}) use only the Python standard library and do not import the programs that produce the certificates.
+Each certificate is checked by two programs, written independently of each other, neither of which imports the programs that found the certificates. For a certificate of Section~\ref{sec:3b} or Appendix~\ref{app:short}, the first checker recomputes the relations of each copy step from Lemma~\ref{lem:copy} and the closures by exact elimination over $\Q$ together with rule (INJ), rebuilds each row from its definition, merges the closed sets identified by (EL), checks the proof of each inequality that the certificate proves by Lemma~\ref{lem:copyineq}, including the absence of cycles among these proofs, and compares the two sides of \eqref{eq:identity} coefficient by coefficient. For the certificate of Section~\ref{sec:pair}, it rebuilds the closures with \ref{R1}, checks that each row is an instance of its rule (each permutation or partial map respects pairs, types and laws as required, each identification \ref{R5} has the indices of its form, transposed for $\Gamma'$, each support row has the form required in \ref{R6}, and the grid indices are at most $\LmDepth$), and verifies that the weighted rows sum to $\lambda S-L$. Both checkers reject negative multipliers on inequality rows. The second checkers represent the configurations by explicit parametrizations and closed sets by reduced row echelon bases; for the certificates of Section~\ref{sec:3b} we confirmed that the two checkers compute the same relations and the same closures. For the inequalities proved inside the certificate of Theorem~\ref{thm:3b}, the second checker re-implements the check of the first, following the same steps; those from the list of Dougherty, Freiling and Zeger are also re-derived from their copy steps by an exact linear program, and all of them are compared with the published formulas.
 
-The checker \file{check630.py} reads the copy steps, the cross forms, the identifications, the rows and $\lambda$. It recomputes the relations of each copy step from Lemma~\ref{lem:copy} and computes closures by exact elimination over $\Q$ together with rule (INJ). It then rebuilds each row from its definition, merges the closed sets identified by (EL), and compares the two sides of \eqref{eq:identity} coefficient by coefficient.\ For each inequality proved in the certificate it also checks the proof, including the absence of cycles among the earlier proved inequalities that the proof applies.
-
-The checker \file{check3.py} rebuilds the closures with \ref{R1} and checks the following:
-\begin{enumerate}[label=(\roman*)]
-\item each permutation in \ref{R3} maps pairs to pairs and variables in $\mathcal W$ to variables of the same type;
-\item the indices $(i,j)$ of each identification \ref{R5} are those of its form, transposed for $\Gamma'$;
-\item each support row involves a form $x+y$ with $x$ taking values in $X$ and $y$ in $Y$;
-\item the permutation of each row \ref{R9} has the properties required there on the coordinates that occur;\item the map $\tau$ of each row \ref{R10} is defined exactly on the coordinates that occur and has the properties required there;\item the grid indices are at most $\LmDepth$.
-\end{enumerate}
-It then verifies that the weighted rows sum to $\lambda S-L$. Both checkers reject negative multipliers on inequality rows.
-
-The second checkers \file{indep\_check.py} and \file{indep3.py} were written independently from the mathematical definitions. They represent the configuration by an explicit parametrization and store closed sets as reduced row echelon bases computed with python-flint.\ For the inequalities proved inside the certificate of Theorem~\ref{thm:3b}, we also re-implemented the lemma check of \file{check630.py}, following the same steps. The inequalities of the list of Dougherty, Freiling and Zeger among them are also re-derived from their copy steps by an exact linear program, all of them are compared with the published formulas, and the Lean proof below proves each of them from its copy steps.\ For the certificates of Section~\ref{sec:3b} we confirmed by direct comparison that the two checkers compute the same relations and the same closures.
-
-Appendix~\ref{app:repro} describes further tests of the checkers and lists the hash prefixes of the certificate files and the running times of the checkers.
-
-\subsection*{Formal verification}
-Theorems~\ref{thm:3b}--\ref{thm:pair}, Corollary~\ref{cor:3a} and the bound of Remark~\ref{rem:erdos}\ are\ also proved in Lean~4 \cite{Lean4} with Mathlib \cite{Mathlib}. The proofs build on Kleinwaks' Lean library \cite{Kle26}, which we ported to a newer version of Lean and Mathlib without changing its statements. For the certificates of Theorems~\ref{thm:3b}, \ref{thm:3ball}\ and~\ref{thm:pair}, a Python program translates the certificate into Lean source. Each row becomes a lemma proved from general facts, two sets of forms with the same closure are shown to determine each other by explicit derivations with the rules \ref{cl:span}--\ref{cl:inj} of Lemma~\ref{lem:closure}, which the kernel checks by evaluation, and the tactic \texttt{linear\_combination} checks the weighted sum of the rows. The theorems of Table~\ref{tab:lean} do not mention the certificates, so the translation program need not be trusted. Their statements use definitions from Mathlib, from Kleinwaks' library and from our hand-written files,\footnote{In one line of a generated file, the injectivity of $(x,y)\mapsto x-y$ on a finite set is stated through an abbreviation. In independent replays, the exported proofs of all theorems of Table~\ref{tab:lean}\ were also accepted by \texttt{leanchecker} and by two further kernel implementations, nanoda \cite{nanoda} and lean4lean \cite{Car24}.} and they depend only on the three standard axioms of Lean.
-
-\leanKakeyaParagraph{the certificate of Theorem~\ref{thm:3b}}{The Lean files for this certificate prove}
-
-A third translation, of the certificate of Theorem~\ref{thm:3ball}, places the coordinates of the configuration in an arbitrary abelian group. This certificate does not use rule~\ref{cl:div}, so its closures are computed over~$\Z$. The Lean files in the namespace \file{\CgLeanModule} prove parts~\ref{thm:3b:ent} and~\ref{thm:3b:set} of Theorem~\ref{thm:3b} with the numbers of Theorem~\ref{thm:3ball} for every abelian group $\GG$ (the third part of Table~\ref{tab:lean}); again $\GG$ ranges over the types of the lowest universe.
-
-In the formalization for Theorem~\ref{thm:pair}, a row for the configuration of $\Gamma'$ is the same lemma applied to $\Gamma'$, and a variable of type $(i,j)$ is realized as the sum of $i$ first coordinates and $j$ second coordinates of further independent copies of $(X_1,Y_1)$, which does not change the joint law of the configuration.\ Rows \ref{R9}\ and~\ref{R10}\ are realized by permutations of independent copies of $(X_1,Y_1)$, applied after the reflection in rows~\ref{R10}, and the kernel checks by evaluation that each permutation carries the forms of a row to their images.\ The Lean files for this certificate prove the theorems in the last part of Table~\ref{tab:lean}. The theorem \texttt{pair\_ceiling\_torsionFree} follows from \texttt{pair\_ceiling} by a formal version of the reduction to $\Z$ in the proof of Theorem~\ref{thm:pair} (\texttt{card\_sub\_le\_of\_int}). The step from \texttt{pair\_ceiling} to \texttt{theta\_le} is Kleinwaks' formal proof for his reading. For \texttt{thetaK\_le} and \texttt{admissibleK\_le\_value} we adapt its last step to a fixed $K$, and the main estimate \cite[Proposition~3.5]{Kle26} is again taken from his library.
-
-
-\begin{table}[ht]
-\centering
-\caption{The certificates and their checks. A certificate NAME is the file \file{certs/NAME.json} of the repository. The last two rows of each part record the second checker and the Lean proof.}\label{tab:verify}
-\footnotesize
-\def\tabncol{3}\def\tabnall{4}\begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.1cm}*{\tabncol}{>{\raggedright\arraybackslash}p{2.7cm}}@{}}
-\toprule
-\multicolumn{\tabnall}{@{}l}{(a) The Kakeya-type exponent; checker \file{check630.py}}\\
-\midrule
-& Theorem~\ref{thm:3b}\csCol{Remark~\ref{rem:s30}} & Theorem~\ref{thm:3ball} & Appendix~\ref{app:short}\\
-\midrule
-Certificate & \file{\CbFile}\csCol{\file{\CsFile}} & \file{\CgFile} & \file{\CrFile}\\
-Checked bound & $\CbUp$\csCol{$\CsUp$} & $\CgUp$ & $\CrUp$\\
-Cross forms used & $\CbFormsUsed$ of $\CbForms$\csCol{$\CsFormsUsed$ of $\CsForms$} & $\CgFormsUsed$ of $\CgForms$ & $\CrFormsUsed$ of $\CrForms$\\
-Shannon rows & $\CbShannon$\csCol{$\CsShannon$} & $\CgShannon$ & $\CrShannon$ ($72$ grouped)\\
-Proved inequalities & $\CbLemmas$ ($\CbLemmaRows$ rows)\csCol{$\CsLemmas$ ($\CsLemmaRows$ rows)} & none & none\\Identities (CI) & $\CbCI$\csCol{$\CsCI$} & $\CgCI$ & $\CrCI$\\
-Identifications (EL) & $\CbMerges$\csCol{$\CsMerges$} & $\CgMerges$ ($\CgMergesNeeded$ needed) & $\CrMerges$\\
-Closed sets used & $\CbFlats$\csCol{$\CsFlats$} & $\CgFlats$ & $\CrFlats$\\
-Rule \ref{cl:div} used & \CbDiv\csCol{\CsDiv} & \CgDiv & \CrDiv\\
-Valid in & \CbDomain\csCol{\CsDomain} & \CgDomain & \CrDomain\\
-\midrule
-Second checker & accepts\csCol{accepts} & accepts & accepts\\
-Lean 4 proof & \file{\CbLeanName}\csCol{none} & \file{\CgLeanName}& none\\
-\midrule
-\multicolumn{\tabnall}{@{}l}{(b) The two-set exponent; checker \file{check3.py}; variables $D_0,D_1,\LmWvars$ for $\Gamma$ and for $\Gamma'$}\\
-\midrule
-& Theorem~\ref{thm:pair}\csCol{} & &\\
-\midrule
-Certificate & \file{\LmFile}\csCol{} & &\\
-Checked bound & $\lambda<\LmLamUp$\csCol{} & &\\
-Forms (with $\mathcal W$) & $\LmForms$ ($\LmWForms$)\csCol{} & &\\
-Shannon rows & $\LmShannon$\csCol{} & &\\
-Identities \ref{R2} & $\LmCI$\csCol{} & &\\
-Identities \ref{R4} & $\LmDpair$\csCol{} & &\\
-Identities \ref{R5} & $\LmIdent$\csCol{} & &\\
-Identities \ref{R3} & $\LmMerge$\csCol{} & &\\
-Identities \ref{R9} & $\LmPmerge$\csCol{} & &\\Identities \ref{R10} & $\LmXshare$\csCol{} & &\\Support rows \ref{R6} & $\LmBsum$\csCol{} & &\\
-Grid rows (depth $\LmDepth$) & $\LmGrid$\csCol{} & &\\
-Closed sets used & $\LmFlatsA$ ($\Gamma$), $\LmFlatsB$ ($\Gamma'$)\csCol{} & &\\
-Rule \ref{cl:div} used & yes\csCol{} & &\\
-\midrule
-Second checker & accepts\csCol{} & &\\
-Lean 4 proof & \file{\LmLeanName}\csCol{} & &\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[ht]
-\centering
-\caption{The theorems of the Lean proofs. The numbers $\lambda_X,\lambda_Y,\lambda_S$ and $\lambda$ are those of the certificates.}\label{tab:lean}
-\footnotesize
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{5.1cm}>{\raggedright\arraybackslash}p{8.9cm}@{}}
-\toprule
-Lean theorem & Statement\\
-\midrule
-\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{14cm}@{}}{Theorem~\ref{thm:3b}; namespace \file{\CbLeanModule}}\\
-\midrule
-\texttt{entropy\_ineq} & \eqref{eq:inj} for every pair $(X,Y)$ of real random variables whose law is supported on a finite set on which $(x,y)\mapsto x-y$ is injective\\
-\texttt{entropy\_ineq\_general} & part~\ref{thm:3b:ent} of Theorem~\ref{thm:3b} for all real random variables $X,Y$ with finitely many values\\
-\texttt{entropy\_max} & \eqref{eq:entform} with $C=\lambda_X+\lambda_Y+\lambda_S$\\
-\texttt{set\_ineq'} & \eqref{eq:setform} with the same $C$ for all finite $A,B\subset\R$ and $G\subseteq A\times B$\\
-\texttt{set\_ineq\_prod} & part~\ref{thm:3b:set} of Theorem~\ref{thm:3b} for all finite $A,B\subset\R$ and $G\subseteq A\times B$\\
-\midrule
-\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{14cm}@{}}{Theorem~\ref{thm:3b} in abelian groups $\GG$ without $2$-torsion; Remark~\ref{rem:erdos}; namespace \file{\CbLeanModuleG}}\\
-\midrule
-\texttt{entropy\_ineq\_general} & part~\ref{thm:3b:ent} of Theorem~\ref{thm:3b} for random variables $X,Y$ with finitely many values in $\GG$\\
-\texttt{set\_ineq\_prod} & part~\ref{thm:3b:set} of Theorem~\ref{thm:3b} in $\GG$\\
-\texttt{set\_ineq'} & \eqref{eq:setform} with the same $C$ in $\GG$\\
-\texttt{ap\_differences\_card\_le} & a finite $A\subseteq\GG$ determines at most $|A|^{C}$ nonzero common differences of three-term arithmetic progressions\\
-\texttt{ap\_differences\_pos\_card\_le\_int} & the same for positive common differences and finite $A\subset\Z$\\\midrule
-\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{14cm}@{}}{Theorem~\ref{thm:3ball} in abelian groups $\GG$; namespace \file{\CgLeanModule}}\\
-\midrule
-\texttt{thm12\_entropy} & part~\ref{thm:3b:ent} of Theorem~\ref{thm:3b} with the numbers of Theorem~\ref{thm:3ball}, for random variables $X,Y$ with finitely many values in $\GG$\\
-\texttt{thm12\_set} & part~\ref{thm:3b:set} of Theorem~\ref{thm:3b} in $\GG$, with the numbers of Theorem~\ref{thm:3ball}\\
-\midrule
-\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{14cm}@{}}{Theorem~\ref{thm:pair} and Corollary~\ref{cor:3a}; namespace \file{\LmLeanModule}}\\
-\midrule
-\texttt{pair\_ceiling} & $|X-Y|\le|X+Y|^\lambda$ for all finite $X,Y\subset\Z$\\
-\texttt{pair\_ceiling\_torsionFree} & $|X-Y|\le|X+Y|^\lambda$ for all finite subsets $X,Y$ of a torsion-free abelian group\\
-\texttt{thetaK\_le} & $C_{3a}\le2-1/\lambda$: the supremum of the admissible exponents is at most $2-1/\lambda$ in the reading with fixed $K$ and $c$ (Section~\ref{sec:transfer})\\
-\texttt{admissibleK\_le\_value} & every exponent admissible in the reading with fixed $K$ and $c$ is at most $2-1/\lambda$\\
-\texttt{theta\_le} & the same bound for the supremum in Kleinwaks' reading, with every $K>1$\\
-\bottomrule
-\end{tabular}
-\end{table}
-
+Theorems~\ref{thm:3b}--\ref{thm:pair}, Corollary~\ref{cor:3a} and the bound of Remark~\ref{rem:erdos} are also proved in Lean~4 \cite{Lean4} with Mathlib \cite{Mathlib}. The proofs build on Kleinwaks' Lean library \cite{Kle26}, which we ported to a newer version of Lean and Mathlib without changing its statements. A program translates each certificate into Lean source: each row becomes a lemma proved from general facts, two sets of forms with the same closure are shown to determine each other by explicit derivations with the rules \ref{cl:span}--\ref{cl:inj} of Lemma~\ref{lem:closure}, which the kernel checks by evaluation, the tactic \texttt{linear\_combination} checks the weighted sum of the rows, and each inequality that the certificate of Theorem~\ref{thm:3b} proves by Lemma~\ref{lem:copyineq} becomes a Lean theorem about arbitrary random variables. The formal statements, listed in the supplement \cite{Cert} with the definitions they use, do not mention the certificates, so the translation need not be trusted. They are parts~\ref{thm:3b:ent} and~\ref{thm:3b:set} of Theorem~\ref{thm:3b} over $\R$ and in every abelian group without $2$-torsion, the same parts with the numbers of Theorem~\ref{thm:3ball} in every abelian group, the bound of Remark~\ref{rem:erdos}, Theorem~\ref{thm:pair}, and Corollary~\ref{cor:3a} in the readings of Section~\ref{sec:transfer} with fixed $K$ and $c$ and with every $K>1$. They depend only on the three standard axioms of Lean.
 
 \FloatBarrier
 
-\section{Concluding remarks}\label{sec:remarks}
-The lower bounds recorded in \cite{TaoC} leave gaps of about $0.05$ for $C_{3b}$ and about $0.1$ for $C_{3a}$. In floating point, the Shannon linear programs on the configurations of Sections~\ref{sec:3b} and~\ref{sec:pair} do not improve the earlier bounds without the new variables: with standard forms only, the optimum for $C_{3b}$ is $11/6$ (Remark~\ref{rem:cross}), and with $D_0$ and $D_1$ alone and the forms with coefficients in $\{-1,0,1\}$, the optimum for $\lambda$ is $1.4621$, above the exponent $1.4543$ of \cite{Kle26} (Remark~\ref{rem:w}). We do not know how far larger configurations, more cross forms or further non-Shannon inequalities can lower the two exponents.
 \appendix
 
 \section{A short certificate}\label{app:short}
 
-The certificate \file{\CrFile.json} proves $H(X,Y)\le\tfrac{314}{459}H(X)+\tfrac{302}{459}H(Y)+\tfrac{225}{459}H(X+Y)$ for injective pairs in any abelian group. By Lemma~\ref{lem:reduction} it gives the exponent $\CrSlash<\CrUp$ in all abelian groups. It uses the configuration \eqref{eq:config} and the five cross forms
+This appendix works through a certificate that is small enough to be checked by hand. The short certificate in \cite{Cert} proves
+\[
+H(X,Y)\le\tfrac{314}{459}H(X)+\tfrac{302}{459}H(Y)+\tfrac{225}{459}H(X+Y)
+\]
+for injective pairs in any abelian group. By Lemma~\ref{lem:reduction} it gives the exponent $\CrSlash<\CrUp$ in all abelian groups.
+
+\emph{The forms.} Besides the standard forms of the configuration \eqref{eq:config}, the certificate uses the five cross forms
 \[
 y_0-x_4,\quad x_0+y_0+x_2,\quad x_0+y_1+x_2,\quad x_0+y_1-x_4,\quad y_0+y_1+x_2.
 \]
-Let $\mathrm{CI}_t=H(V,U')+H(O)-H(O,U')-H(V)$ be the expression of (CI) for step (S$t$), and let $I_k$ be the $72$ mutual informations of Table~\ref{tab:shortrows} with weights $w_k$. Then
+Each of them is built from two pairs of the configuration that share a coordinate or a sum. The form $x_0+y_0+x_2$ is the sum of the three coordinates of $g_0=(x_0,y_0)$ and $g_2=(x_2,y_0)$, which share $y_0$; in the same way $x_0+y_1+x_2$ belongs to $g_1$ and $g_3$, which share $y_1$, and $y_0+y_1+x_2$ to $g_2$ and $g_3$, which share $x_2$. The form $x_0+y_1-x_4=s_1-x_4$ combines $g_1$ and $g_5$, which share $y_1$, and $y_0-x_4=y_4-x_0$ combines $g_0$ and $g_4$, which have the same sum $s_0=s_4$.
+
+\emph{The identity.} Let $\mathrm{CI}_t=H(V,U')+H(O)-H(O,U')-H(V)$ be the expression of (CI) for step (S$t$), and let $I_k$ be the $72$ mutual informations of Table~\ref{tab:shortrows} with weights $w_k$. Then
 \begin{equation}\label{eq:short}
 459\,H(X,Y)+\sum_kw_kI_k-220\,\mathrm{CI}_1-79\,\mathrm{CI}_2-69\,\mathrm{CI}_3=314\,H(X)+302\,H(Y)+225\,H(X+Y)
 \end{equation}
-holds after each joint entropy is replaced by the entropy of the closure of its forms, which uses only rules \ref{cl:span} and \ref{cl:inj}, and after the identifications of Table~\ref{tab:shortel} are applied. Since $I_k\ge0$ and $\mathrm{CI}_t=0$, \eqref{eq:short} gives the stated inequality. In the certificate file each $I_k$ is expanded by the chain rule into inequalities of the first kind in \ref{lp:sh}, all with the weight $w_k/459$. Comparing \eqref{eq:short} with $76.5$ times the identity of Proposition~\ref{prop:kt} gives
+holds after each joint entropy is replaced by the entropy of the closure of its forms and the identifications of Table~\ref{tab:shortel} are applied. Since $I_k\ge0$ and $\mathrm{CI}_t=0$, \eqref{eq:short} gives the stated inequality. In the certificate file each $I_k$ is expanded by the chain rule into inequalities of the first kind in \ref{lp:sh}, all with the weight $w_k/459$.
+
+\emph{Checking the identity.} Write each $I_k=I(A;B\mid C)$ as $H(A,C)+H(B,C)-H(A,B,C)-H(C)$, and write $\mathrm{CI}_t$ out with the pairs $O$, $U'$ and the variables $V$ of step (S$t$). The closures need only rules \ref{cl:span} and \ref{cl:inj}: starting from the integer combinations of the given forms, add the two coordinates of a pair $g_v$ whenever $d_v$ is such a combination, and repeat. For example, $d_5=x_4-y_1=(y_0+x_2)-(y_1+x_2)-(y_0-x_4)$, so the closure of $\{y_1+x_2,\,y_0-x_4,\,y_0+x_2\}$ contains $x_4$ and $y_1$, and hence also $y_0$ and $x_2$. Next, merge the closed sets that Table~\ref{tab:shortel} identifies; each identification is an instance of (EL) for the step shown. After these replacements every entropy except those of $x_0$, $y_0$ and $x_0+y_0$ and of the sets identified with them cancels, and the remaining coefficients are $314$, $302$ and $225$.
+
+\emph{What it says about $\Delta_\KT$.} Since $\mathrm{CI}_t=0$, subtracting $76.5$ times the identity of Proposition~\ref{prop:kt} from \eqref{eq:short} gives
 \[
-153\,\Delta_\KT=2\sum_kw_kI_k+8H(Y)+9H(X+Y)-16H(X)\ge8H(Y)+9H(X+Y)-16H(X).
+\sum_kw_kI_k=76.5\,\Delta_\KT+8H(X)-4H(Y)-4.5H(X+Y),
 \]
+so that
+\[
+153\,\Delta_\KT\ge8H(Y)+9H(X+Y)-16H(X).
+\]
+In particular $\Delta_\KT\ge1/153$ when $H(X)=H(Y)=H(X+Y)=1$.
 
 \begin{table}[ht]
 \centering
@@ -744,77 +555,30 @@ $w_k$ & $I_k$ & $w_k$ & $I_k$\\
 \end{tabular}
 \end{table}
 
+\FloatBarrier
+\section{The constants of Theorem~\ref{thm:3b}}\label{app:const}
 
-
-\section{The certificate for Theorem \ref{thm:3b}}\label{app:forms}
-
-Table~\ref{tab:forms} lists the cross forms of \file{\CbFile.json}\ and Table~\ref{tab:lemmas} its applications of the inequalities proved in the certificate. The exact multipliers are in the certificate.
-
-\begin{table}[ht]
-\centering
-\caption{The $\CbForms$ cross forms of \file{\CbFile.json}, in the free coordinates of \eqref{eq:config}.\ifnum\CbFormsUnused>0\ The forms marked with an asterisk occur in no row.\fi}\label{tab:forms}
-\small
-\begin{minipage}{0.92\textwidth}\raggedright
-\CbFormList.
-\end{minipage}
-\end{table}
-
-
-
-\begin{table}[ht]
-\centering
-\caption{The $\CbLemmaRows$ applications of inequalities proved in \file{\CbFile.json}: Mat\'u\v{s}'s inequality $M_s$ and entries of the list \cite[Section~VIII]{DFZ11}, applied to joint variables $a,b,c,d$, with their multipliers $\mu_k$ in \eqref{eq:identity} rounded to three significant digits. Forms are shown up to sign.}\label{tab:lemmas}
-\scriptsize
-\setlength{\tabcolsep}{2pt}
-\begin{tabular}{@{}lrllll@{}}
-\toprule
-Inequality & $\mu_k$ & $a$ & $b$ & $c$ & $d$\\
-\midrule
-\CbLemmaTableRows
-\bottomrule
-\end{tabular}
-\end{table}
-
-
-\clearpage
-\section{Reproducibility data}\label{app:repro}
-Table~\ref{tab:repro} lists the hash prefixes of the certificate files, the running times of the checkers and the results of three further tests. In a negative test we alter one item of a certificate. Both checkers reject every altered certificate that is not again a valid certificate, and the second checker also fails when rule (INJ) is switched off. On explicit joint laws of the glued variables, built from random laws of $(X,Y)$ with up to $15$ support points and from the $13$-point law of \cite{MI26} behind the record lower bound for $C_{3b}$, all rows hold, all identifications are equalities of laws, all closures are functions of their generators, and \eqref{eq:identity} holds with the true entropies up to rounding errors of order $10^{-14}$. For the two-set certificate we did the same with explicit sets $X,Y$\ and random choices of $\Gamma$\LmRoundClause. Finally, we compared, for each set of forms in a certificate, the closures over $\Q$ with those over $\Z$ and over $\Z[1/m]$ for small $m$.\ For the two theorems of the third part of Table~\ref{tab:lean}, the axioms were checked by running their lines of \file{Axioms.lean} on their own; the other lines of that file, and all Lean files outside the directory \file{EntropyBounds/GlueZ}, are unchanged since commit \texttt{b3786a3} of the repository, whose build checked them.
-
-\begin{table}[ht]
-\centering
-\caption{Data for the checks of Table~\ref{tab:verify}. Times are wall-clock seconds on one core. Negative tests: the number of certificates altered in one item (a multiplier, a $\lambda$, a row, a copy step, a cross form, an identification,\ a proved inequality or its proof,\ a permutation, a grid index or a type), and in parentheses the number that the checkers accept.}\label{tab:repro}
-\footnotesize
-\def\tabncol{3}\def\tabnall{4}\begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.1cm}*{\tabncol}{>{\raggedright\arraybackslash}p{2.7cm}}@{}}
-\toprule
-& Theorem~\ref{thm:3b}\csCol{Remark~\ref{rem:s30}} & Theorem~\ref{thm:3ball} & Appendix~\ref{app:short}\\
-\midrule
-SHA-256 (prefix) & \file{\CbShaShort}\csCol{\file{\CsShaShort}} & \file{\CgShaShort} & \file{\CrShaShort}\\
-Checker time & $\CbTime$\csCol{$\CsTime$} & $\CgTime$ & $\CrTime$\\
-Negative tests & \CbNeg\csCol{\CsNeg} & \CgNeg & \CrNeg\\
-Joint laws checked & $\CbLaws$\csCol{$\CsLaws$} & $\CgLaws$ & $\CrLaws$\\
-\midrule
-& Theorem~\ref{thm:pair}\csCol{} & &\\
-\midrule
-SHA-256 (prefix) & \file{\LmShaShort}\csCol{} & &\\
-Checker time & $\LmTime$\csCol{} & &\\
-Negative tests & \LmNeg\csCol{} & &\\
-Triples $(X,Y,\Gamma)$ & $\LmLaws$\csCol{} & &\\
-\bottomrule
-\end{tabular}
-
-\smallskip
-\raggedright\footnotesize \NegNote
-\end{table}
+The rational numbers of Theorem~\ref{thm:3b}, which are the coefficients of its certificate, are
+\begin{align*}
+\lambda_X&=\CbLamXd,\\
+\lambda_Y&=\CbLamYd,\\
+\lambda_S&=\CbLamSd,
+\end{align*}
+and
+\[
+\lambda_X+\lambda_Y+\lambda_S=\CbFrac<\CbUp.
+\]
 
 \section*{Data availability}
-The certificates, the checkers,\ the Lean proofs,\ the programs that found the certificates and the scripts behind Table~\ref{tab:verify} are archived at \href{https://doi.org/\ZenodoDOI}{doi:\ZenodoDOI} and available at \url{\RepoURL}.
+The certificates (\file{c3b\_torsionfree.json} for Theorem~\ref{thm:3b}, \file{c3b\_allgroups.json} for Theorem~\ref{thm:3ball}, \file{c3b\_short.json} for Appendix~\ref{app:short} and \file{pair\_exponent.json} for Theorem~\ref{thm:pair}), the checkers, the Lean proofs and the programs that found the certificates are archived in \cite{Cert} and available at \url{\RepoURL}.
 
 \section*{Acknowledgements}
 Generative AI tools were used to write code, run analyses and draft text; the author directed the work and takes full responsibility for its content.
 
 \begin{thebibliography}{99}
-\bibitem{EP1097} T.~F.~Bloom, \emph{Erd\H{o}s problem \#1097}, \url{https://www.erdosproblems.com/1097}, accessed October 20, 2026; the problem was posed at the 1989 Great Western Number Theory problem session.\bibitem{Bou99} J.~Bourgain, \emph{On the dimension of Kakeya sets and related maximal inequalities}, Geom. Funct. Anal. \textbf{9} (1999), 256--282.
-\bibitem{Car24} M.~Carneiro, \emph{Lean4Lean: Verifying a typechecker for Lean, in Lean}, arXiv:2403.14064, 2024.\bibitem{CC26} E.~P.~Csirmaz and L.~Csirmaz, \emph{Information inequalities for five random variables}, Computation \textbf{14} (2026), no.~2, article~42; arXiv:2512.23316.
+\bibitem{EP1097} T.~F.~Bloom, \emph{Erd\H{o}s problem \#1097}, \url{https://www.erdosproblems.com/1097}, accessed October 20, 2026; the problem was posed at the 1989 Great Western Number Theory problem session.
+\bibitem{Bou99} J.~Bourgain, \emph{On the dimension of Kakeya sets and related maximal inequalities}, Geom. Funct. Anal. \textbf{9} (1999), 256--282.
+\bibitem{CC26} E.~P.~Csirmaz and L.~Csirmaz, \emph{Information inequalities for five random variables}, Computation \textbf{14} (2026), no.~2, article~42; arXiv:2512.23316.
 \bibitem{DFZ11} R.~Dougherty, C.~Freiling and K.~Zeger, \emph{Non-Shannon information inequalities in four random variables}, arXiv:1104.3602, 2011.
 \bibitem{Fa26a} A.~Farnamfar, \emph{Sharp optimality of $11/6$ for literal ladder constructions}, Zenodo, \href{https://doi.org/10.5281/zenodo.23337952}{doi:10.5281/zenodo.23337952}, 2026.
 \bibitem{Fa26b} A.~Farnamfar, \emph{Sharp colour bounds and structural obstructions for three-direction sums--differences constructions}, Zenodo, \href{https://doi.org/10.5281/zenodo.23385419}{doi:10.5281/zenodo.23385419}, 2026.
@@ -829,15 +593,18 @@ Generative AI tools were used to write code, run analyses and draft text; the au
 \bibitem{Kle26} L.~J.~Kleinwaks, \emph{Improved sum-difference inequalities in abelian groups}, proof paper, version~1.1 (October 6, 2026), and Lean formalization, \url{https://github.com/kleinwaks/sum-difference}, archived as \href{https://doi.org/10.5281/zenodo.23200803}{doi:10.5281/zenodo.23200803}.
 \bibitem{Le15} M.~Lemm, \emph{New counterexamples for sums-differences}, Proc. Amer. Math. Soc. \textbf{143} (2015), 3863--3868.
 \bibitem{Mad08} M.~Madiman, \emph{On the entropy of sums}, in: Proc. IEEE Information Theory Workshop, Porto, 2008, 303--307.
-\bibitem{Mathlib} The mathlib Community, \emph{The Lean mathematical library}, in: Proc. 9th ACM SIGPLAN Int. Conf. Certified Programs and Proofs (CPP 2020), 2020, 367--381.\bibitem{Mat07} F.~Mat\'u\v{s}, \emph{Infinitely many information inequalities}, in: Proc. IEEE Int. Symp. Information Theory, Nice, 2007, 41--44.
+\bibitem{Mathlib} The mathlib Community, \emph{The Lean mathematical library}, in: Proc. 9th ACM SIGPLAN Int. Conf. Certified Programs and Proofs (CPP 2020), 2020, 367--381.
+\bibitem{Mat07} F.~Mat\'u\v{s}, \emph{Infinitely many information inequalities}, in: Proc. IEEE Int. Symp. Information Theory, Nice, 2007, 41--44.
 \bibitem{MI26L} Mosaic Intelligence, \emph{A mechanized certificate ladder and a certified Shannon wall for the Katz--Tao sum--difference problem}, Zenodo, \href{https://doi.org/10.5281/zenodo.20646386}{doi:10.5281/zenodo.20646386}, 2026.
 \bibitem{MI26} Mosaic Intelligence, \emph{Certified sum-difference lower-bound certificates for $C_{3a}$, $C_{3b}$, and $C_{3c}$}, certificate archive, \href{https://doi.org/10.5281/zenodo.20794135}{doi:10.5281/zenodo.20794135}, 2026.
-\bibitem{Lean4} L.~de~Moura and S.~Ullrich, \emph{The Lean 4 theorem prover and programming language}, in: Automated Deduction -- CADE 28, Lecture Notes in Comput. Sci. \textbf{12699}, Springer, 2021, 625--635.\bibitem{nanoda} \emph{nanoda\_lib}, a type checker for Lean~4, \url{https://github.com/ammkrn/nanoda_lib}.\bibitem{Pet12} G.~Petridis, \emph{New proofs of Pl\"unnecke-type estimates for product sets in groups}, Combinatorica \textbf{32} (2012), 721--733.
+\bibitem{Lean4} L.~de~Moura and S.~Ullrich, \emph{The Lean 4 theorem prover and programming language}, in: Automated Deduction -- CADE 28, Lecture Notes in Comput. Sci. \textbf{12699}, Springer, 2021, 625--635.
+\bibitem{Pet12} G.~Petridis, \emph{New proofs of Pl\"unnecke-type estimates for product sets in groups}, Combinatorica \textbf{32} (2012), 721--733.
 \bibitem{Ru99} I.~Z.~Ruzsa, \emph{An analog of Freiman's theorem in groups}, Ast\'erisque \textbf{258} (1999), 323--326.
 \bibitem{Ru09} I.~Z.~Ruzsa, \emph{Sumsets and entropy}, Random Structures Algorithms \textbf{34} (2009), 1--10.
 \bibitem{Tao10} T.~Tao, \emph{Sumset and inverse sumset theory for Shannon entropy}, Combin. Probab. Comput. \textbf{19} (2010), 603--639.
 \bibitem{Tao25} T.~Tao, \emph{Sum-difference exponents for boundedly many slopes, and rational complexity}, arXiv:2511.15135, 2025.
 \bibitem{TaoC} T.~Tao et al., \emph{Optimization constants in mathematics}, \url{https://teorth.github.io/optimizationproblems/}, pages 3a and 3b, accessed October 19, 2026.
+\bibitem{Cert} T.~S.~Tomar, \emph{Certificates, programs and Lean proofs for ``Certified upper bounds for two sum-difference exponents''}, Zenodo, \href{https://doi.org/\ZenodoDOI}{doi:\ZenodoDOI}, 2026.
 \bibitem{ZY98} Z.~Zhang and R.~W.~Yeung, \emph{On characterization of entropy function via information inequalities}, IEEE Trans. Inform. Theory \textbf{44} (1998), 1440--1452.
 \end{thebibliography}
 

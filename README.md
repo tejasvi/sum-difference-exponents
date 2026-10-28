@@ -2,7 +2,7 @@
 
 Certificates, checkers and search programs for the paper
 *Certified upper bounds for two sum-difference exponents* by Tejasvi Singh Tomar
-(Zenodo, [doi:10.5281/zenodo.23687855](https://doi.org/10.5281/zenodo.23687855)).
+(Zenodo, [doi:10.5281/zenodo.23716680](https://doi.org/10.5281/zenodo.23716680)).
 
 ## Results
 
@@ -110,7 +110,7 @@ These scripts need `python-flint`, `numpy` and `scipy`.
   polynomials in `s`.
 - `independent/neg_tests5.py CERT`, `independent/neg643.py CERT`: perturbed certificates. Both checkers reject
   them, except perturbations that leave a valid certificate, such as dropping an identification that the identity
-  does not use or replacing a cross form by its negative or by its double (Table 7 of the paper).
+  does not use or replacing a cross form by its negative or by its double (see the test data below).
 - `independent/numeric_validate.py CERT N SEED`, `independent/val643.py CERT N SEED`: evaluation of every row on
   explicit joint laws, namely random laws and the 13-point law of the record lower bound for `C_3b`, and on explicit
   sets `X`, `Y` for the two-set exponent. `val643.py` also runs fixed pairs, among them one with 43,264 atoms per
@@ -119,11 +119,113 @@ These scripts need `python-flint`, `numpy` and `scipy`.
   and set the environment variable `MI13_LAW` to its path.
 - `python3 tools/split_pair.py checker/check3.py certs/pair_exponent.json`: splits the certificate of Theorem 1.3
   into the configuration inequality (Proposition 4.1) and the grid inequality (Lemma 4.2), prints their sum and
-  counts the closed sets used (Table 1).
+  counts the closed sets used (see the certificate sizes below).
 - `python3 tools/verify_appendix_a.py checker/check630.py tools/appendix_a_rows.tex tools/appendix_a_identifications.tex`:
   checks the identity (A.1) of Appendix A directly from the tables printed in the paper.
 - `python3 tools/stats630.py checker/check630.py CERT`: counts the closed sets used by a certificate of
-  Section 3 (Table 1).
+  Section 3 (see the certificate sizes below).
+
+### Certificate sizes
+
+| | `c3b_torsionfree.json` (Theorem 1.1) | `c3b_allgroups.json` (Theorem 1.2) | `c3b_short.json` (Appendix A) |
+| --- | --- | --- | --- |
+| checked bound | 1.8272963 | 1.8294282 | 1.8322441 |
+| cross forms used | 41 of 43 | 20 of 21 | 5 of 5 |
+| Shannon rows | 255 | 139 | 82 (72 grouped) |
+| proved inequalities | 72 (35 rows) | none | none |
+| identities (CI) | 3 | 3 | 3 |
+| identifications (EL) | 21 | 21 (19 needed) | 16 |
+| closed sets used | 331 | 172 | 103 |
+| rule (b) of Lemma 2.3 used | c = 2^k | no | no |
+| valid in | groups without 2-torsion | all abelian groups | all abelian groups |
+| second checker | accepts | accepts | accepts |
+| Lean proof | `CL3B6SC` | `C3BALL` | none |
+
+The 293 rows of `c3b_torsionfree.json` are 252 inequalities of the first kind and 3 of the second kind in (i) of
+Section 3.3, the 3 identities (CI) and 35 applications of the 72 inequalities proved inside the certificate.
+
+`pair_exponent.json` (Theorem 1.3; variables D0, D1, w, v, u for Γ and for Γ′) proves λ < 1.42084184 with 117 forms
+(95 of them involving w, v or u), 2564 Shannon rows, identities (R2): 7, (R4): 1, (R5): 12, (R3): 1637, (R8): 505 and
+(R9): 190, 2 support rows (R6) (4918 instances of the rules in all), 160 grid rows at depth 12 (72 and 66 instances of the two
+concavity inequalities (G1), 19 of (G3) and 3 of the monotonicity inequalities in (G2)), and 2700 closed sets for Γ and
+3048 for Γ′; it uses rule (b)
+of Lemma 2.3; the second checker accepts it, and its Lean proof is `R7A5`.
+
+### The certificate for Theorem 1.1
+
+Its 41 cross forms that occur in rows, in the free coordinates x0, y0, y1, x2, x4 of the configuration (Section 3.2 of the paper):
+
+x0−x2, x0+x2, x0−x4, x0+x4, y0−y1, y0+y1, y0−x4, x2−x4, x2+x4, x0−y0+y1, x0+y0−y1, x0+y0+y1, x0−y0−x2, x0+y0−x2, x0+y0+x2, x0−y0−x4, x0+y1−x2, x0+y1+x2, x0−y1−x4, x0−y1+x4, x0+y1−x4, x0+y1+x4, x0−x2−x4, x0+x2−x4, y0−y1+x2, y0+y1+x2, y0−y1−x4, y0+x2−x4, y1+x2+x4, x0+y0+y1+x2, x0+y0−y1−x4, x0+y0+y1−x4, x0+y0−x2−x4, x0+y0+x2−x4, x0+y1−x2+x4, y0−y1−x2−x4, y0−y1+x2−x4, x0+y0+y1+x2−x4, x0+y0−y1−x2−x4, x0−y1−x2, y0+y1+x2−x4.
+
+The file also lists 2 forms that occur in no row: y0+y1−x4, x0−y0+y1+x2.
+
+Its applications of inequalities proved inside the certificate (Matúš's inequality M_s and entries of the list of
+Dougherty, Freiling and Zeger, arXiv:1104.3602, Section VIII), applied to joint variables a, b, c, d, with their
+multipliers rounded to three significant digits (the exact multipliers are in the file); forms are shown up to sign:
+
+| inequality | multiplier | a | b | c | d |
+| --- | --- | --- | --- | --- | --- |
+| M7 | 6.94·10^−6 | x2 | x0+y0−y1−x2−x4 | y1+x2 | x0−x2−x4 |
+| M7 | 5.94·10^−6 | x2 | x0+y0−y1−x2−x4 | y1+x2 | x0+y0−x2−x4 |
+| M10 | 3.34·10^−6 | (y0, x0+y0−y1−x2−x4) | (x2, x0+y0−y1−x4) | (y1, x0+y0−x2−x4) | x0−x4 |
+| M11 | 1.76·10^−5 | (x0+y0−x4, y1+x2+x4) | (y0+x2, y0−y1−x4) | (y0, y1+x2+x4) | (y1+x2, x0+y0−y1−x4) |
+| M15 | 3.43·10^−6 | (y1+x2, x0−x4) | (x0+y0−x4, y0+y1+x2) | (y1, x0−x2−x4) | y0+x2−x4 |
+| M16 | 1.76·10^−6 | (y0+x2, y0−y1−x4) | (x0+y1, x0+y0−x4) | (y1, y0−x4) | x0−x4 |
+| M17 | 6.13·10^−6 | (y1+x2, y0−y1−x4) | (x0+y1, x0+y0−x4) | (x0−x4, x0−y0+y1) | y1 |
+| M57 | 2.57·10^−7 | (y0+x2, y0−x4) | (x0−x2, x0+x4) | (x0, x2+x4) | y0+x2−x4 |
+| M62 | 5.09·10^−9 | (y0+x2, y0−x4) | (x0−x2, x0+x4) | (x0, x2+x4) | y0+x2−x4 |
+| DFZ 5 | 6.48·10^−4 | y0+y1+x2 | y0+x2−x4 | y0+x2 | y0+y1+x2−x4 |
+| DFZ 5 | 1.52·10^−4 | x0−x4 | y0+x2−x4 | x2 | x4 |
+| DFZ 7 | 3.04·10^−3 | (y1+x2, x4) | (x4, x0−x2) | (x2, x4) | x0−y1−x2 |
+| DFZ 7 | 2.70·10^−4 | (y1+x2, y0−y1−x4) | (x0+y0−x4, x0−x2) | (x2, y0−x4) | (y0+x2−x4, x0+y0−y1−x4) |
+| DFZ 7 | 1.95·10^−5 | (x0−x2, y0−y1−x4) | (y0+x2, y0−y1−x4) | (x2, y0−y1−x4) | x0−y0−x2 |
+| DFZ 8 | 1.10·10^−3 | (x0+y0−x4, x0−x2) | (x0+y1, y0+x2−x4) | (x0−x4, x0−y0−x2) | x0+y1−x2 |
+| DFZ 8 | 4.73·10^−4 | y0−x2 | (y0+x2, y0−y1−x4) | (y0+x2, y1+x2) | (y0+x2, y0−x4) |
+| DFZ 8 | 5.03·10^−5 | (x0+y1, x0+y0−x4) | (y0, x0+y0−x4) | (x0, x0+y0−x4) | x0+y1−x4 |
+| DFZ 33 | 1.65·10^−6 | (y0+x2, y0−y1−x4) | (x2, y0−y1−x4) | (x0−x2, y0−y1−x4) | x2+x4 |
+| DFZ 35 | 2.14·10^−5 | (x0+y0−x4, y1+x2+x4) | (x0+y1, x0−x2−x4) | (x0−x4, x0+y1+x2) | (y1+x2+x4, x0+y0+y1−x4) |
+| DFZ 56 | 1.71·10^−4 | (y0+x2, x0−x4) | (x0−x2, x0−x4) | (x2, x0−x4) | x0−y0−x2 |
+| DFZ 60 | 1.42·10^−3 | x0+y0−x2 | x0+y0+x2 | x0−y0−x2 | (y1+x4, x0+y0+y1+x2−x4) |
+| DFZ 77 | 3.74·10^−6 | (y1, x0−x2−x4) | (y0−y1, x0−x2−x4) | (y1+x2, x0+y1−x4) | x0+y0−y1−x4 |
+| DFZ 107 | 2.67·10^−7 | (y1+x4, x0+y1−x2) | (x0−x2−x4, y0−y1+x2) | (y1, x0−x2−x4) | y0−y1+x2−x4 |
+| DFZ 109 | 1.25·10^−3 | y1−x4 | (x0+y0−x4, y1+x4) | (x0+y1, y1+x4) | (y1+x4, y0+y1) |
+| DFZ 109 | 1.25·10^−3 | (x0+y1, y0+x2) | (x0+y1, y1+x2) | (x0+y1, x2) | y0+y1+x2 |
+| DFZ 109 | 1.22·10^−3 | (x0+y0, y1+x2) | (x0+y0, y0+x2) | (x0+y0, x2) | y0+y1+x2 |
+| DFZ 109 | 9.62·10^−4 | (y0, y1+x4) | (y0, x0+y0−x4) | (y0, x4) | x0+y0−y1−x4 |
+| DFZ 109 | 1.80·10^−4 | (x0+y0−x4, x0−x2) | (y0, x0−x2) | (x0+y0, y0+x2) | y0−y1−x2−x4 |
+| DFZ 109 | 1.14·10^−4 | (x0+y1, x0−y0−x2) | (x0+y1, x0−x2−x4) | (x0+y1, y1+x4) | y0+x2 |
+| DFZ 109 | 8.16·10^−5 | x0−x4 | x0+y0+y1+x2−x4 | x0+y0−x4 | x0+y1+x2 |
+| DFZ 109 | 6.47·10^−5 | (x0+y1, x0+y0−x4) | (x0+y1, x4) | (x0+y1, y1+x4) | (x0+y1, y0−x4) |
+| DFZ 109 | 3.87·10^−5 | (x0+y0, y1+x2) | (x0+y1, y1+x2) | (x0, y1+x2) | x0+y0−x2 |
+| DFZ 109 | 1.55·10^−5 | x0−x4 | x0−y0−x2 | x0 | x0−x2−x4 |
+| DFZ 109 | 1.39·10^−5 | x4 | x0+y0+y1−x4 | y0−x4 | x0+y1−x4 |
+| DFZ 109 | 3.01·10^−6 | x0−y0 | (x0, y0−y1−x4) | (x0, x0+y0−x4) | y0−y1 |
+
+### Test data
+
+| certificate | checker time (s) | negative tests | explicit laws |
+| --- | --- | --- | --- |
+| `c3b_torsionfree.json` (Theorem 1.1) | 9 | 64 (4\*) | 321 joint laws |
+| `c3b_allgroups.json` (Theorem 1.2) | 3 | 41 (2\*) | 321 joint laws |
+| `c3b_short.json` (Appendix A) | 1 | 36 (0) | 321 joint laws |
+| `pair_exponent.json` (Theorem 1.3) | 4 | 77 (12\*) | 12 triples (X, Y, Γ) |
+
+The checker times are wall-clock seconds on one core. A negative test alters one item of a certificate (a
+multiplier, a λ, a row, a copy step, a cross form, an identification, a proved inequality or its proof, a permutation, a
+grid index or a type); the column gives the number of altered certificates and, in parentheses, the number that the
+checkers accept. Both checkers reject every altered certificate that is not again a valid certificate, and the second
+checker also fails when rule (INJ) is switched off. \*Each accepted modification is again a valid certificate. For
+Theorems 1.1 and 1.2 they drop an identification (EL) that the identity does not use (two in `c3b_allgroups.json`) or
+replace a cross form by its negative or by its double (four in `c3b_torsionfree.json`), which leaves the closures
+unchanged in the groups where the certificate is valid (see the certificate sizes above). For Theorem 1.3, ten of them add a valid
+row of type (R8) or (R9) with multiplier 0, and two change a row of type (R9) or (R3) into another valid instance of its
+rule.
+
+The explicit joint laws of the glued variables are built from random laws of (X, Y) with up to 15 support points and
+from the 13-point law behind the record lower bound for `C_3b`. On each of them all rows hold, all identifications are
+equalities of laws, all closures are functions of their generators, and the identity of the certificate holds with the
+true entropies up to rounding errors of order 10^−14. For the two-set certificate the same holds for explicit sets
+`X`, `Y` and random choices of Γ, with rounding errors of order 10^−13.
 
 ## Lean proofs
 
@@ -133,6 +235,15 @@ The lines for the theorems of Theorem 1.2 were run on their own. The other lines
 `lean/EntropyBounds/GlueZ/` except `Axioms.lean`, are unchanged since commit `b3786a3` of this repository, whose build
 checked them. The theorems do not
 mention the certificates, so the programs that translate the certificates into Lean need not be trusted.
+Their statements use definitions from Mathlib, from Kleinwaks' library and from our hand-written files; in one line of a
+generated file, the injectivity of `(x, y) ↦ x − y` on a finite set is stated through an abbreviation. In independent
+replays, the exported proofs of the following theorems were also accepted by `leanchecker` and by two further kernel
+implementations, nanoda (https://github.com/ammkrn/nanoda_lib) and lean4lean (M. Carneiro, *Lean4Lean: Verifying a
+typechecker for Lean, in Lean*, arXiv:2403.14064): `entropy_ineq`, `entropy_ineq_general`, `entropy_max`, `set_ineq'`
+and `set_ineq_prod` in `EntropyBounds.Glue.Certs.CL3B6SC`; `entropy_ineq_general`, `set_ineq_prod`, `set_ineq'`,
+`ap_differences_card_le` and `ap_differences_pos_card_le_int` in `EntropyBounds.GlueG.Certs.CL3B6SC`; `thm12_entropy`
+and `thm12_set` for Theorem 1.2; and `pair_ceiling`, `pair_ceiling_torsionFree`, `thetaK_le`, `admissibleK_le_value`
+and `theta_le` in `EntropyBounds.TwoSet.Certs.R7A5`.
 
 The Lean files in the namespace `EntropyBounds.Glue.Certs.CL3B6SC` (certificate `certs/c3b_torsionfree.json`, Theorem 1.1) prove
 
@@ -180,9 +291,11 @@ The Lean files in the namespace `EntropyBounds.TwoSet.Certs.R7A5` (certificate `
 - `admissibleK_le_value` (file `Headline.lean` in that directory): every exponent that is admissible with `K` and
   `c` fixed is at most 26554427158 / 20486493787.
 
-The rows for partial symmetries and partial reflections are realized by permutations of independent copies of
-Kleinwaks' coupling (after the reflection, for partial reflections), and the kernel checks by evaluation that each
-permutation carries the forms of a row to their images.
+A row for the reflected configuration is the same lemma applied to Γ′, and a variable of type (i, j) is realized as the
+sum of i first coordinates and j second coordinates of further independent copies of Kleinwaks' coupling, which does not
+change the joint law of the configuration. The rows for partial symmetries and partial reflections are realized by
+permutations of independent copies of Kleinwaks' coupling (after the reflection, for partial reflections), and the kernel
+checks by evaluation that each permutation carries the forms of a row to their images.
 
 Files:
 
